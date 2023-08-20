@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.principal { 
+    height: 370px;
+    background-color: #000;
+    color: white;
+}
+
+.principal__text {
+    width: 608px;
+    margin: auto;
+    padding-top: 80px
+}
+
+.principal__text h1 {
+    font-family: 'Archivo', sans-serif;
+    font-size: 36px;
+    width: 319px;
+    margin-bottom: 24px;
+}
+
+.principal__text p {
+    font-family: 'Poppins', sans-serif;
+    color: #42D3FF;
+    font-weight: 400;
+    width: 283px;
+}
+
+.secundaria {
+    background-color: #d9d9d9;
+}
+
+.forms {
+    background-color: white;
+    width: 608px;
+    margin: auto;
+    transform: translateY(-100px);
+    padding: 64px;
+}
+
+.forms h2 {
+    font-family: 'Archivo', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.forms label, .forms input {
+    display: block;
+}
+
+.forms label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4E4958;
+    margin-bottom: 8px;
+}
+
+.forms input, .forms textarea, .forms select {
+    width: 100%;
+    border-radius: 8px;
+    height: 56px;
+    border: 1px solid var(--back-lines-in-white, #b7b7be);
+    margin-bottom: 24px;
+    background-color: white;
+}
+
+.forms textarea {
+    height: 168px;
+}
+
+.forms select {
+    font-family: 'Poppins', sans-serif;
+    color: var(--texts-inputs, #948f9f);
+    padding: 15px 24px;
+}

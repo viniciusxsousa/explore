@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- css -->
+    <link rel="stylesheet" href="/src/style.css">
+
+    <title>Formulário</title>
+</head>
+<body>
+    <section class="principal">
+        <div class="principal__text">
+            <h1>Crie e compartilhe seu evento.</h1>
+            <p>O primeiro passo, é preencher esse formulário de inscrição.</p>
+        </div>
+    </section>
+
+    <section class="secundaria">
+        <form class="forms" action="#">
+            <h2>Informações do evento</h2>
+
+            <label for="titulo">Título do evento</label>
+            <input id="titulo" type="text">
+
+            <label for="link">Link do evento</label>
+            <input id="link" type="text">
+
+            <label for="whastapp">Whatsapp para contato</label>
+            <input id="whatsapp" type="text">
+
+            <label id="informacoes" >Informações extras</label>
+            <textarea id="informacoes" cols="30" rows="10"></textarea>
+
+            <label for="categoria">Categoria</label>
+            <select id="vategoria">
+                <option value="01">categoria 01</option>
+                <option value="02">categoria 02</option>
+                <option value="03">categoria 03</option>
+            </select>
+
+            <h2>Privacidade</h2>
+
+            <label for="admin">E-mail do administrador</label>
+            <input id="admin" type="text">
+
+            <label for="senha_part">Senha de acesso para os participantes.</label>
+            <input id="senha_part" type="text">
+
+            <input id="evento" type="checkbox">
+            <label for="evento">Evento privado</label>
+
+            <h2>Dia e Hora</h2>
+
+            <label for="data">Data</label>
+            <input id="data" type="date">
+
+            <label for="hora_das">Das</label>
+            <input id="hora_das" type="datetime">
+
+            <label for="hora_ate">Até</label>
+            <input type="datetime">
+
+            <div>
+                <input type="submit" value="Salvar evento">
+            </div>
+
+        </form>
+    </section>
+</body>
+</html>
