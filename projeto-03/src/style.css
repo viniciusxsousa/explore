@@ -40,6 +40,7 @@
     margin: auto;
     transform: translateY(-100px);
     padding: 64px;
+    border-radius: 8px 8px 0px 0px;
 }
 
 .forms h2 {
@@ -47,6 +48,8 @@
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 40px;
+    border-bottom: 1px solid #b7b7be;
+    padding-bottom: 16px;
 }
 
 .forms label, .forms input {
@@ -78,4 +81,63 @@
     font-family: 'Poppins', sans-serif;
     color: var(--texts-inputs, #948f9f);
     padding: 15px 24px;
+}
+
+.conteiner {
+    display: flex;
+    align-content: flex-end;
+    justify-content: flex-start;
+    gap: 16px;
+}
+
+#evento {
+    width: 24px;
+    height: 24px;
+}
+
+#evento + label {
+    margin-top: 3px;
+}
+
+.conteiner2 {
+    display: flex;
+    gap: 20px;
+}
+
+label[for='data'] {
+    margin-right: 152px;
+}
+
+label[for='hora_das'] {
+    margin-right: 100px;
+}
+
+#data {
+    width: 312px;
+}
+
+#hora_das, #hora_ate {
+    width: 128px;
+}
+
+.forms__submit {
+    background-color: #F0F0F4;
+    transform: translateY(-100px);
+    width: 608px;
+    margin: auto;
+    text-align: center;
+    padding: 40px 40px;
+    border-radius: 0px 0px 8px 8px;
+}
+
+.forms__submit input {
+    width: 528px;
+    background-color: #04D361;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 8px;
+    color: white;
+    font-family: 'Archivo', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
 }

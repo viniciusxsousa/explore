@@ -23,7 +23,7 @@
     </section>
 
     <section class="secundaria">
-        <form class="forms" action="#">
+        <form class="forms" id="events" action="#">
             <h2>Informações do evento</h2>
 
             <label for="titulo">Título do evento</label>
@@ -53,25 +53,31 @@
             <label for="senha_part">Senha de acesso para os participantes.</label>
             <input id="senha_part" type="text">
 
-            <input id="evento" type="checkbox">
-            <label for="evento">Evento privado</label>
-
-            <h2>Dia e Hora</h2>
-
-            <label for="data">Data</label>
-            <input id="data" type="date">
-
-            <label for="hora_das">Das</label>
-            <input id="hora_das" type="datetime">
-
-            <label for="hora_ate">Até</label>
-            <input type="datetime">
-
-            <div>
-                <input type="submit" value="Salvar evento">
+            <div class="conteiner">
+                <input id="evento" type="checkbox">
+                <label for="evento">Evento privado</label>
             </div>
 
+            <h2>Dia e Hora</h2>
+            
+            <div class="conteiner2">
+                <label for="data">Data</label>
+                <label for="hora_das">Das</label>
+                <label for="hora_ate">Até</label>
+            </div>
+
+            <div class="conteiner2">
+                <input id="data" type="date">
+                <input id="hora_das" type="datetime">
+                <input id="hora_ate" type="datetime">
+            </div>
+        
         </form>
+        
+        <div class="forms__submit">
+            <input type="submit" value="Salvar evento">
+        </div>
+
     </section>
 </body>
 </html>
