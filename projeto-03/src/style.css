@@ -11,7 +11,7 @@
 }
 
 .principal__text {
-    width: 608px;
+    width: 736px;
     margin: auto;
     padding-top: 80px
 }
@@ -36,7 +36,7 @@
 
 .forms {
     background-color: white;
-    width: 608px;
+    width: 736px;
     margin: auto;
     transform: translateY(-100px);
     padding: 64px;
@@ -123,7 +123,7 @@ label[for='hora_das'] {
 .forms__submit {
     background-color: #F0F0F4;
     transform: translateY(-100px);
-    width: 608px;
+    width: 736px;
     margin: auto;
     text-align: center;
     padding: 40px 40px;
