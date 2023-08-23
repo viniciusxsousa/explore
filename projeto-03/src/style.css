@@ -64,6 +64,18 @@
     margin-bottom: 8px;
 }
 
+label span {
+    display: inline-block;
+    margin-left: 12px;
+    color: #C1BCCC;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+label span:hover {
+    color: #57545d;
+}
+
 .forms input, .forms textarea, .forms select {
     width: 100%;
     border-radius: 8px;
