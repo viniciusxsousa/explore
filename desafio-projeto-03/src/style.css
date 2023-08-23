@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #efefef;
+}
+
+.principal {
+    height: 436px;
+    background-color: #535971;
+}
+
+.principal__conteiner {
+    width: 750px;
+    margin: auto;
+    padding-top: 144px;
+}
+
+.principal__title {
+    font-family: 'Staatliches', cursive;
+    font-size: 48px;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 18px;
+}
+
+.principal__description {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+}
+
+.principal__conteiner__texto {
+    width: 417px;
+}
+
+.forms {
+    width: 750px;
+    margin: auto;
+    background-color: white;
+    border-radius: 20px 20px 0 0;
+    transform: translateY(-100px);
+    padding: 64px;
+}
+
+fieldset {
+    border: 0;
+    margin-bottom: 50px;
+}
+
+legend, h2 {
+    display: block;
+    width: 100%;
+    font-family: 'Staatliches', cursive;
+    color: #535971;
+    font-size: 24px;
+    font-weight: 400;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #E6E6F0;
+    margin-bottom: 35px;
+}
+
+label, input {
+    display: block;
+    width: 100%;
+}
+
+label {
+    font-family: 'Poppins', sans-serif;
+    color: #4E4958;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+label span {
+    display: inline-block;
+    color: #C1BCCC;
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+label span:hover {
+    color: #888490;
+}
+
+input {
+    height: 56px;
+    border-radius: 8px;
+    border: 1px solid  #b2b2bc;
+    margin-bottom: 20px;
+    background: #fafafc;
+}
+
+.wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 22px;
+}
+
+.col-2 {
+    width: 100%;
+}
+
+h2 {
+    font-size: 20px;
+    border: none;
+    margin-bottom: 11px;
+}
+
+#p_data, #s_data {
+    width: 300px;
+}
+
+#p_das, #p_ate, #s_das, #s_ate {
+    width: 140px;
+}
+
+.button__area {
+    width: 750px;
+    background: #535971;
+    transform: translateY(-100px);
+    margin: auto;
+    padding: 50px 70px;
+    border-radius: 0 0 8px 8px;
+}
+
+.button__area button {
+    width: 100%;
+    background-color: #FF5374;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 20px;
+
+    font-family: 'Staatliches', cursive;
+    font-size: 20px;
+    color: white;
+}
