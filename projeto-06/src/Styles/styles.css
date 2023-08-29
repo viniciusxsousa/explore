@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Mulish', sans-serif;
+    background-color: #121214;
+    color: white;
+    margin: 73px auto 140px;
+}
+
+.title__conteiner {
+    width: 1218px;
+    margin: auto;
+    margin-bottom: 60px;
+}
+
+.title {
+    font-size: 59px;
+    font-weight: 900;
+    color: #02799D;
+}
+
+.descricao {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.galaxias {
+    width: 1218px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 60px;
+}
+
+.galaxias__card {
+    width: 366px;
+    border-radius: 8px;
+    border: 2px solid #323238;
+    background-color: #202024;
+}
+
+.galaxias__card img {
+    width: 100%;
+}
+
+.card__conteiner {
+    padding: 20px 32px 32px 32px;
+}
+
+.card__conteiner h2 {
+    margin-bottom: 24px;
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.card__conteiner p {
+    font-size: 20px;
+    font-weight: 600;
+}
