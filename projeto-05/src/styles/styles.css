@@ -4,29 +4,33 @@
     box-sizing: border-box;
 }
 
-html {
+:root {
     font-size: 62.5%;
 }
 
+html {
+    font-size: 1.6rem;
+}
+
 main {
-    max-width: 33em;
-    margin: 3.5em auto;
+    max-width: 33rem;
+    margin: 3.5rem auto;
 }
 
 .main__title {
     color: #A54328;
-    font-size: 2.9em;
+    font-size: 2.9rem;
     font-weight: 700;
 }
 
 .main__bolo {
-    margin: 4.7em 0;
-    width: 31em;
+    margin: 4.7rem 0;
+    width: 31rem;
 }
 
 .main__paragrafo {
     color: #A54328;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-weight: 400;
     line-height: normal;
     margin-bottom: 34px;
@@ -34,14 +38,14 @@ main {
 
 .preparo {
     color: #A54328;
-    font-size: 2.9em;
+    font-size: 2.9rem;
     font-weight: 700;
     margin-bottom: 37px;
 }
 
 .preparo__lista {
     color: #A54328;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-weight: 400;
     list-style-position: inside;
     margin-bottom: 27px;
@@ -55,7 +59,7 @@ main {
     background-color: #A54328;
     color: white;
     border-radius: 6px;
-    padding: 0.8em 1.6em;
+    padding: 0.8rem 1.6rem;
     border: none;
 }
 
@@ -67,9 +71,9 @@ main {
 
     .main {
         display: flex;
-        gap: 18.9em;
-        max-width: 114.9em;
-        margin: 7.5em 10em
+        gap: 18.9rem;
+        max-width: 114.9rem;
+        margin: 7.5rem 10rem
     }
 
     .col-2 {
@@ -77,22 +81,22 @@ main {
     }
 
     .main__title {
-        font-size: 4.0em;
+        font-size: 4.0rem;
     }
 
     .main__paragrafo {
-        font-size: 2.0em;
+        font-size: 2.0rem;
     }
 
     .preparo {
-        font-size: 4.0em;
+        font-size: 4.0rem;
     }
 
     .preparo__lista {
-        font-size: 2.0em;
+        font-size: 2.0rem;
     }
 
     .preparo__button {
-        font-size: 1.4em;
+        font-size: 1.4rem;
     }
 }
