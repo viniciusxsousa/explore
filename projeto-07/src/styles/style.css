@@ -67,6 +67,10 @@ label[for='search'] {
     background-color: white;   
 }
 
+.galeria article:hover img {
+    filter: hue-rotate(7deg) contrast(102%) saturate(200%);
+}
+
 .galeria article div {
     padding: 22px;
 }
