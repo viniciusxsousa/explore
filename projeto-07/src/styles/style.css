@@ -67,6 +67,10 @@ label[for='search'] {
     background-color: white;   
 }
 
+.galeria article img {
+    transition: all .3s ease-in;
+}
+
 .galeria article:hover img {
     filter: hue-rotate(7deg) contrast(102%) saturate(200%);
 }
