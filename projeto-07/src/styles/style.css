@@ -100,3 +100,25 @@ label[for='search'] {
     justify-content: center;
     align-items: center;
 }
+
+/* Animações */
+@keyframes move {
+    0% {
+        transform: translateY(var(--position));
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.header {
+    --position: -100%;
+    animation-name: move;
+    animation-duration: 1s;
+}
+
+.footer {
+    --position: 100%;
+    animation-name: move;
+    animation-duration: 1s;
+}
