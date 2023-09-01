@@ -59,7 +59,7 @@ label[for='search'] {
 
 .galeria {
     display: grid;
-    grid-template-columns: repeat(3, 390px);
+    grid-template-columns: repeat(3, 361px);
     column-gap: 22px;
     row-gap: 22px;
 }
@@ -70,6 +70,7 @@ label[for='search'] {
 }
 
 .galeria article img {
+    width: 100%;
     transition: all .3s ease-in;
 }
 
