@@ -26,7 +26,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2.5rem
+    gap: 2.5rem;
+}
+
+.header * {
+    --position: -100px;
+
+    animation-name: move;
+    animation-duration: 1s;
 }
 
 .header__logo {
@@ -52,6 +59,11 @@ body {
 
 .header__form input::placeholder {
     color: white;
+}
+
+.main {
+    animation-name: aparicao;
+    animation-duration: 1s;
 }
 
 .main__fundo__gato {
@@ -102,12 +114,22 @@ body {
     font-size: 2.4rem;
     font-weight: 700;
     margin-bottom: 2.4rem;
+
+    animation-name: aparicao;
+    animation-duration: 1s;
 }
 
 .aside__card {
+    --dalay-animation: 0.2s;
+
     display: flex;
     gap: 1.6rem;
     margin-bottom: 3rem;
+
+    animation-name: aparicao-02;
+    animation-duration: 1s;
+    animation-delay: var(--dalay-animation);
+    animation-fill-mode: backwards;
 }
 
 .card__title {
@@ -125,10 +147,15 @@ body {
 }
 
 .footer p {
+    --position: 100px;
+
     background-color: var(--azul);
     padding: 1.6rem;
     text-align: center;
     color: var(--branco);
+
+    animation-name: move;
+    animation-duration: 1s;
 }
 
 /* Resposividade */
@@ -199,6 +226,7 @@ body {
 
    .card__title {
         margin-bottom: 0.7rem;
+
    }
 }
 
@@ -221,5 +249,35 @@ body {
         max-width: 38.4rem;
         margin-left: auto;
         margin-right: auto;
+    }
+}
+
+/* animações */
+
+@keyframes move {
+    0% {
+        transform: translateY(var(--position));
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes aparicao {
+    0% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes aparicao-02 {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    } 100% {
+        opacity: 1;
+        transform: scale(1);
     }
 }
