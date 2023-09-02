@@ -132,6 +132,10 @@ body {
     animation-fill-mode: backwards;
 }
 
+.aside__img {
+    height: 8.4rem;
+}
+
 .card__title {
     color: var(--preto-escuro);
     font-size: 1.8rem;
