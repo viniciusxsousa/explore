@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --pink-text: #B52184;
+    --blue-text: #312D64;
+    --white-text: #fff;
+
+    --blue-gradient: linear-gradient(96deg, #343193 0%, #302C63 99.68%);
+
+}
+
+body {
+    font-family: 'Mulish', sans-serif;
+    font-size: 1.6rem;
+}
+
+.header__img {
+    display: block;
+    width: 28rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.7rem;
+}
+
+.header__title {
+    color: var(--pink-text);
+    font-size: 3.2rem;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+.header__text {
+    font-size: 2rem;
+    color: var(--blue-text);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.header__btn {
+    display: block;
+    margin: auto;
+    margin-bottom: 9rem;
+    width: 5.8rem;
+    height: 10.5rem;
+    border: .4rem solid var(--pink-text);
+    border-radius: 7rem;
+    background-color: var(--white-text);
+}
+
+.planets {
+    padding: 5rem 4rem;
+    background-image: var(--blue-gradient);
+}
+
+.planets__card {
+    background-color: var(--white-text);
+    border-radius: 2rem;
+    padding: 2.5rem;
+    margin-bottom: 5rem;
+}
+
+.planets__card img {
+    margin-bottom: 3rem;
+}
+
+.planets__card h2 {
+    font-size: 3rem;
+    color: var(--pink-text);
+    font-weight: 900;
+    margin-bottom: 1.8rem;
+}
+
+.planets__card p {
+    font-size: 1.6rem;
+    color: var(--blue-text);
+    font-weight: 600;
+    max-width: 27rem;
+}
+
+.contact {
+    padding: 8rem 4rem;
+}
+
+.contact__title {
+    font-size: 3.2rem;
+    font-weight: 900;
+    color: var(--pink-text);
+    margin-bottom: 4.3rem;
+}
+
+.contact__form label {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.contact__form input, textarea {
+    display: block;
+    width: 100%;
+}
+
+.contact__form input, .contact__form textarea {
+    border: .2rem solid var(--blue-text);
+    padding: 1.4rem 1.4rem 1.4rem 4.4rem;
+    border-radius: 1.6rem;
+    margin-bottom: 2.4rem;
+}
+
+.contact__form textarea {
+    height: 9rem;
+    padding-left: 1.4rem;
+}
+
+.contact__form input[type=submit] {
+    display: inline-block;
+    width: 15rem;
+    border: none;
+    background-image: var(--blue-gradient);
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding-left: 1.4rem;
+}
+
+.contact__form input::placeholder, .contact__form textarea::placeholder {
+    color: var(--blue-text);
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.contact__form input:nth-child(2) {
+    background-image: url('../imgs/person.svg');
+    background-repeat: no-repeat;
+    background-position: top 10px left 14px;
+}
+
+.contact__form input:nth-child(4) {
+    background-image: url('../imgs/at.svg');
+    background-repeat: no-repeat;
+    background-position: top 10px left 14px;
+}
+
+.footer {
+    height: 7.8rem;
+    padding: 1.6rem;
+    background-image: var(--blue-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer p {
+    text-align: center;
+    color: var(--white-text);
+    font-size: 2rem;
+    font-weight: 600;
+
+}
