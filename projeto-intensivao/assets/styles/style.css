@@ -10,6 +10,7 @@
     --pink-text: #B52184;
     --blue-text: #312D64;
     --white-text: #fff;
+    --gray-bg: #F9F4FB;
 
     --blue-gradient: linear-gradient(96deg, #343193 0%, #302C63 99.68%);
 
@@ -20,12 +21,16 @@ body {
     font-size: 1.6rem;
 }
 
-.header__img {
+.header__img-mobile {
     display: block;
     width: 28rem;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1.7rem;
+}
+
+.header__img-desktop {
+    display: none;
 }
 
 .header__title {
@@ -53,6 +58,7 @@ body {
     border: .4rem solid var(--pink-text);
     border-radius: 7rem;
     background-color: var(--white-text);
+    cursor: pointer;
 }
 
 .planets {
@@ -163,5 +169,79 @@ body {
     color: var(--white-text);
     font-size: 2rem;
     font-weight: 600;
+}
 
+@media screen and (min-width: 768px) {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        background-color: var(--gray-bg);
+    }
+
+    .header__flexItem1 {
+        order: 1;
+    }
+
+    .header__img-mobile {
+        display: none;
+    }
+
+    .header__img-desktop {
+        display: block;
+        width: 67rem;
+    }
+
+    .header__img {
+        width: 72rem;
+    }
+
+    .header__flexItem2 {
+        margin-top: 25rem;
+        margin-left: 10rem;
+    }
+
+    .header__title {
+        font-size: 5.8rem;
+    }
+
+    .header__text {
+        font-size: 3.2rem;
+        text-align: left;
+    }
+
+    .header__btn {
+        display: inline-block;
+        margin-top: 14rem;
+    }
+
+    .planets {
+        display: flex;
+        justify-content: center;
+        gap: 9rem
+    }
+
+    .planets__card h2 {
+        font-size: 3.5rem;
+    }
+
+    .planets__card p {
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+
+    .contact {
+        padding-left: 10rem;
+        background-image: url('../imgs/estrelas.png');
+        background-repeat: no-repeat;
+        background-position: right;
+        background-color: var(--gray-bg);
+    }
+
+    .contact__title {
+        font-size: 4.2rem;
+    }
+
+    .contact__form {
+        width: 60rem;
+    }
 }
