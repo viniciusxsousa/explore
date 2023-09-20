@@ -22,6 +22,10 @@ body {
     align-items: center;
 }
 
+.hide {
+    display: none;
+}
+
 .main {
     width: 43rem;
     height: 27rem;
@@ -30,6 +34,8 @@ body {
     padding: 4.8rem 6.4rem 6.4rem 6.4rem;
     text-align: center;
 }
+
+/* Screen 1 */
 
 .main__title {
     font-family: 'Montserrat', sans-serif;
@@ -74,4 +80,17 @@ body {
     font-weight: 700;
     margin-left: -4px;
     cursor: pointer;
+}
+
+/* Screen 2 */
+.main__closed {
+    color: var(--txt-blue);
+    font-size: 2.4rem;
+    font-weight: 400;
+    margin-bottom: 5rem;
+}
+
+.screen2 .main__btn {
+    width: 16.6rem;
+    border-radius: .4rem;
 }

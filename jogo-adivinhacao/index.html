@@ -17,14 +17,24 @@
 <body>
 
     <section class="main">
-        <h1 class="main__title">Jogo da Adivinhação</h1>
-        <p class="main__text" >Adivinhe o número entre 0 e 10</p>
 
-        <label for="tentativa">Tentativa</label>
-        <input class="main_attempts" type="text" id="tentativa">
+        <div class="screen1">
+            <h1 class="main__title">Jogo da Adivinhação</h1>
+            <p class="main__text" >Adivinhe o número entre 0 e 10</p>
+    
+            <label for="tentativa">Tentativa</label>
+            <input class="main_attempts" type="text" id="tentativa">
+    
+            <button onclick="attempt()" class="main__btn">Tentar</button>
+        </div>
 
-        <button class="main__btn">Tentar</button>
+        <div class="screen2 hide">
+            <h2 class="main__closed">Acertou em 3 tentativas!</h2>
+            <button onclick="restart()" class="main__btn">Jogar novamente</button>
+        </div>
+
     </section>
     
+    <script src="src/javascript/main.js"></script>
 </body>
 </html>
