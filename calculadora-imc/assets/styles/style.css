@@ -60,6 +60,10 @@ body {
     font-weight: 400;
 }
 
+.main__form input:focus {
+    outline: 2px solid #02799D;
+}
+
 .main__form input::placeholder {
     color: rgba(73, 80, 87, 0.50);
     font-size: 1.6rem;
@@ -89,3 +93,47 @@ body {
     gap: .8rem
 }
 
+/* Modal */
+
+.conteiner__modal.open {
+    opacity: 1;
+    overflow: visible;
+}
+
+.conteiner__modal {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.70);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.card__modal {
+    position: relative;
+    width: 36rem;
+    height: 15rem;
+    padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+    background-color: white;
+    border-radius: .6rem;
+}
+
+.card__modal p {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--txt-blue);
+}
+
+.card__btn {
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+    cursor: pointer;
+    transition: transform .8s ease;
+}
+
+.card__btn:hover {
+    transform: scale(1.2);
+}
