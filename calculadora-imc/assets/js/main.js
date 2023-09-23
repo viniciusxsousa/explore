@@ -5,8 +5,14 @@ const $inputHeight = document.querySelector('#altura');
 $formButton.addEventListener('click', (e) => {
     e.preventDefault();
    
-    const weight = $inputWeight.value;
-    const height = $inputHeight.value;
+    const weight = Number($inputWeight.value);
+    const height = Number($inputHeight.value);
 
-    console.log(weight, height);
+    console.log(calcIMC(weight, height));
 })
+
+function calcIMC(weight, height) {
+    let imc = weight / (height ** 2);
+    imc = imc.toFixed(2);
+    return imc
+}
