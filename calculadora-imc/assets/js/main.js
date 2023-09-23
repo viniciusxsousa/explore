@@ -1,12 +1,19 @@
 const $formButton = document.querySelector('.main__form button');
 const $inputWeight = document.querySelector('#peso');
 const $inputHeight = document.querySelector('#altura');
-const $modal = document.querySelector('.conteiner__modal');
-const $txtModal = document.querySelector('.card__modal p');
-const $btnClose = document.querySelector('.card__btn');
 
-console.log($txtModal);
+const Modal = {
+    box: document.querySelector('.conteiner__modal'),
+    mesagem: document.querySelector('.card__modal p'),
+    buttonClose: document.querySelector('.card__btn'),
 
+    open()  {
+        Modal.box.classList.add('open');
+    }, 
+    close() {
+        Modal.box.classList.remove('open');
+    }
+}
 
 /* Lista de eventos */
 $formButton.addEventListener('click', (e) => {
@@ -15,12 +22,13 @@ $formButton.addEventListener('click', (e) => {
     const weight = Number($inputWeight.value);
     const height = Number($inputHeight.value);
 
-    $modal.classList.add('open');
-    $txtModal.innerText = `Seu IMC é de ${calcIMC(weight, height)}`;
+    
+    Modal.mesagem.innerText = `Seu IMC é de ${calcIMC(weight, height)}`;
+    Modal.open();
 })
 
-$btnClose.addEventListener('click', () => {
-    $modal.classList.remove('open');
+Modal.buttonClose.addEventListener('click', () => {
+    Modal.close();
 })
 
 /* Funções */
