@@ -91,14 +91,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: .8rem
+    gap: .8rem;
+    cursor: pointer;
 }
 
 /* Modal */
 
 .conteiner__modal.open {
     opacity: 1;
-    overflow: visible;
+    visibility: visible;
 }
 
 .conteiner__modal {
@@ -109,7 +110,7 @@ body {
     justify-content: center;
     align-items: center;
     opacity: 0;
-    overflow: hidden;
+    visibility: hidden;
 }
 
 .card__modal {
