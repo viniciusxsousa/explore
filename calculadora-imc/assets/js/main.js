@@ -1,5 +1,6 @@
 import { Modal } from './modal.js';
 import { alertError } from './erro-mensagem.js';
+import { calcIMC, notNumber } from './utils.js';
 
 const $formButton = document.querySelector('.main__form button');
 const $inputWeight = document.querySelector('#peso');
@@ -24,14 +25,3 @@ $formButton.addEventListener('click', (e) => {
     Modal.mesagem.innerText = `Seu IMC é de ${calcIMC(weight, height)}`;
     Modal.open();
 })
-
-/* Funções */
-function calcIMC(weight, height) {
-    let imc = weight / ((height / 100 )** 2);
-    imc = imc.toFixed(2);
-    return imc
-}
-
-function notNumber (value) {
-    return isNaN(value) || value == '';
-}
