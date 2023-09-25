@@ -1,4 +1,5 @@
 import { Modal } from './modal.js';
+import { alertError } from './erro-mensagem.js';
 
 const $formButton = document.querySelector('.main__form button');
 const $inputWeight = document.querySelector('#peso');
@@ -14,9 +15,11 @@ $formButton.addEventListener('click', (e) => {
     const showErroMensagem = notNumber(weight) || notNumber(height);
 
     if(showErroMensagem) {
-        console.log('Exibir mensagem de erro');
+        alertError.open();
         return
     }
+
+    alertError.close();
     
     Modal.mesagem.innerText = `Seu IMC é de ${calcIMC(weight, height)}`;
     Modal.open();
