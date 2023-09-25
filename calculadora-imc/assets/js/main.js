@@ -11,6 +11,12 @@ $formButton.addEventListener('click', (e) => {
     const weight = Number($inputWeight.value);
     const height = Number($inputHeight.value);
 
+    const showErroMensagem = notNumber(weight) || notNumber(height);
+
+    if(showErroMensagem) {
+        console.log('Exibir mensagem de erro');
+        return
+    }
     
     Modal.mesagem.innerText = `Seu IMC é de ${calcIMC(weight, height)}`;
     Modal.open();
@@ -21,4 +27,8 @@ function calcIMC(weight, height) {
     let imc = weight / ((height / 100 )** 2);
     imc = imc.toFixed(2);
     return imc
+}
+
+function notNumber (value) {
+    return isNaN(value) || value == '';
 }
