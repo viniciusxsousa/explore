@@ -55,6 +55,10 @@ button {
     gap: 1.6rem
 }
 
+.button-disable{
+    display: none;
+}
+
 /*Light Moded*/
 body.light {
     background-color: var(--light-bg);
