@@ -5,7 +5,7 @@
 }
 
 :root {
-    font-size: 62.5%;
+    font-size: clamp(40%, 1% + 2vw, 62.5%);
 
     --dark-bg: #000;
     --light-bg: #fff;
