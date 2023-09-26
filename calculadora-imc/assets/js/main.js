@@ -25,3 +25,12 @@ $formButton.addEventListener('click', (e) => {
     Modal.mesagem.innerText = `Seu IMC é de ${calcIMC(weight, height)}`;
     Modal.open();
 })
+
+$inputWeight.addEventListener('input', () => {
+    console.log('oi');
+    alertError.close();
+})
+
+$inputHeight.addEventListener('input', () => {
+    alertError.close();
+})
