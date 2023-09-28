@@ -1,4 +1,5 @@
 import state from "./focusTime/state.js";
+import * as timer from "./timer.js"
 
 const controls = {
     controls: document.querySelector('.buttons'),
@@ -37,6 +38,8 @@ function toggleRunning() {
     controls.btnPause.classList.toggle('button-disable');
     controls.btnSet.classList.toggle('button-disable');
     controls.btnStop.classList.toggle('button-disable');
+
+    timer.countDown();
 }
 
 function stop() {

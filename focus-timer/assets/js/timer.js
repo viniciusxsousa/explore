@@ -10,3 +10,13 @@ export function updateTime(minutes, seconds){
     $minutes.textContent = String(minute).padStart(2, '0');
     $seconds.textContent = String(second).padStart(2, '0');
 }
+
+export function countDown(){
+    if(!state.isRunning){
+        return
+    }
+
+    console.log('Rodou');
+
+    setTimeout(() => countDown(), 1000);
+}
