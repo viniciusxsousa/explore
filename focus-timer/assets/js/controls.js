@@ -7,7 +7,7 @@ const controls = {
     btnSet: document.querySelector('.button__stopwatch'),
     btnStop: document.querySelector('.button__stop'),
     btnMusicOff: document.querySelector('.button_speakerOff'),
-    btnMusicOn: document.querySelector('button__speakerOn'),
+    btnMusicOn: document.querySelector('.button__speakerOn'),
     action: '',
     observeClick() {
         this.controls.addEventListener('click', (event) => {
@@ -17,6 +17,12 @@ const controls = {
                 case 'toggleRunning':
                     toggleRunning();
                     break
+                case 'stop':
+                    stop();
+                    break
+                case 'toggleMusic':
+                    toggleMusic();
+                    break;
                 default:
                     console.log('Não há ação');
             }
@@ -31,6 +37,23 @@ function toggleRunning() {
     controls.btnPause.classList.toggle('button-disable');
     controls.btnSet.classList.toggle('button-disable');
     controls.btnStop.classList.toggle('button-disable');
+}
+
+function stop() {
+    state.isRunning = false;
+
+    controls.btnPause.classList.add('button-disable');
+    controls.btnPlay.classList.remove('button-disable');
+    controls.btnStop.classList.add('button-disable');
+    controls.btnSet.classList.remove('button-disable');
+
+}
+
+function toggleMusic() {
+    state.isMute = !state.isMute;
+    
+    controls.btnMusicOff.classList.toggle('button-disable');
+    controls.btnMusicOn.classList.toggle('button-disable');
 }
 
 export {controls}
