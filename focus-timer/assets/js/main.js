@@ -9,4 +9,4 @@ switchMode.buttonDark.addEventListener('click', () => {
     switchMode.toggleDark();
 })
 
-focusTime.start(25, 0);
+focusTime.start(0, 6);

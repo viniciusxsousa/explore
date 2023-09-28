@@ -59,4 +59,4 @@ function toggleMusic() {
     controls.btnMusicOn.classList.toggle('button-disable');
 }
 
-export {controls}
+export {controls, stop}
