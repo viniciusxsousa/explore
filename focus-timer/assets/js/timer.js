@@ -1,8 +1,8 @@
 import state from "./focusTime/state.js";
 import { stop } from "./controls.js";
 
-const $minutes = document.querySelector('.timer__minutes');
-const $seconds = document.querySelector('.timer__seconds');
+export const $minutes = document.querySelector('.timer__minutes');
+export const $seconds = document.querySelector('.timer__seconds');
 
 export function updateTime(minutes, seconds){
     let minute = minutes ?? state.minutes;
@@ -36,3 +36,9 @@ export function countDown(){
 
     setTimeout(() => countDown(), 1000);
 }
+
+$minutes.addEventListener('focus', () => {
+    $minutes.textContent = "";
+})
+
+$minutes.onkeypress = (event) =>  /\d/.test(event.key);

@@ -24,6 +24,9 @@ const controls = {
                 case 'toggleMusic':
                     toggleMusic();
                     break;
+                case 'set':
+                    set();
+                    break
                 default:
                     console.log('Não há ação');
             }
@@ -57,6 +60,13 @@ function toggleMusic() {
     
     controls.btnMusicOff.classList.toggle('button-disable');
     controls.btnMusicOn.classList.toggle('button-disable');
+}
+
+function set() {
+    timer.$minutes.setAttribute('contenteditable', true);
+    timer.$seconds.setAttribute('contenteditable', true);
+
+    timer.$minutes.focus();
 }
 
 export {controls, stop}
