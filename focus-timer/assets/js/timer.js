@@ -41,4 +41,24 @@ $minutes.addEventListener('focus', () => {
     $minutes.textContent = "";
 })
 
+$seconds.addEventListener('focus', () => {
+    $seconds.textContent = ""
+})
+
+$minutes.addEventListener('blur', (event) => {
+    let time = event.target.textContent;
+    time = time > 60 ? 60 : time;
+    state.minutes = time;
+    $minutes.setAttribute('contenteditable', false)
+    updateTime();
+})
+
+$seconds.addEventListener('blur', (event) => {
+    let time = event.target.textContent;
+    time = time > 60 ? 60 : time;
+    state.seconds = time;
+    $seconds.setAttribute('contenteditable', false); 
+    updateTime();
+})
+
 $minutes.onkeypress = (event) =>  /\d/.test(event.key);
