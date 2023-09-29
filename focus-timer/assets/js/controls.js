@@ -1,5 +1,6 @@
 import state from "./focusTime/state.js";
 import * as timer from "./timer.js"
+import * as souds from "./souds.js"
 
 const controls = {
     controls: document.querySelector('.buttons'),
@@ -43,6 +44,7 @@ function toggleRunning() {
     controls.btnStop.classList.toggle('button-disable');
 
     timer.countDown();
+    souds.buttonPressAudio.play();
 }
 
 function stop() {
@@ -53,6 +55,7 @@ function stop() {
     controls.btnStop.classList.add('button-disable');
     controls.btnSet.classList.remove('button-disable');
 
+    souds.buttonPressAudio.play();
 }
 
 function toggleMusic() {
@@ -60,6 +63,13 @@ function toggleMusic() {
     
     controls.btnMusicOff.classList.toggle('button-disable');
     controls.btnMusicOn.classList.toggle('button-disable');
+
+    if(state.isMute) {
+       souds.bgAudio.pause();
+       return 
+    }
+
+    souds.bgAudio.play();
 }
 
 function set() {
@@ -67,6 +77,7 @@ function set() {
     timer.$seconds.setAttribute('contenteditable', true);
 
     timer.$minutes.focus();
+    souds.buttonPressAudio.play();
 }
 
 export {controls, stop}

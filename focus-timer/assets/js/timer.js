@@ -1,5 +1,6 @@
 import state from "./focusTime/state.js";
 import { stop } from "./controls.js";
+import { kitchenTime } from "./souds.js";
 
 export const $minutes = document.querySelector('.timer__minutes');
 export const $seconds = document.querySelector('.timer__seconds');
@@ -29,6 +30,7 @@ export function countDown(){
 
     if(minute < 0) {
         stop();
+        kitchenTime.play();
         return
     }
 
