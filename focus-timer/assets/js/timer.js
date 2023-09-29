@@ -14,6 +14,8 @@ export function updateTime(minutes, seconds){
 }
 
 export function countDown(){
+    clearTimeout(state.idCountDown);
+
     if(!state.isRunning){
         return
     }
@@ -36,7 +38,7 @@ export function countDown(){
 
     updateTime(minute, seconds);
 
-    setTimeout(() => countDown(), 1000);
+    state.idCountDown = setTimeout(() => countDown(), 1000);
 }
 
 $minutes.addEventListener('focus', () => {
