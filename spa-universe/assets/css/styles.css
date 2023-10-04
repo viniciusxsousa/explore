@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --menu-text-color: #C4C4CC;
+    --menu-text-color-hv: #fff;
+}
+
+body, a, button {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    font-size: 1.6rem;
+    background-image: url('../imgs/background-01.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    height: 100vh;
+}
+
+a {
+    color: var(--menu-text-color);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+a:hover {
+    color: var(--menu-text-color-hv);
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    padding: 4rem 0 4rem 7rem;
+}
+
+#app {
+    height: calc(100vh - 122px);
+}
