@@ -9,4 +9,3 @@ router.routesAdd('/exploracao', '/assets/pages/exploracao.html');
 router.handler();
 
 window.router = () => router.router;
-window.handler = router.handler;

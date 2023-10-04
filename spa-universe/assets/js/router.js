@@ -9,9 +9,11 @@ export class Router {
         event = event || window.event;
         event.preventDefault();
 
-        const pathname = event.target.pathname;
+        const pathname = event.target.href;
 
         window.history.pushState({}, '', pathname);
+
+        this.handler();
     }
 
     handler(){
