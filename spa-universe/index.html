@@ -10,6 +10,8 @@
 
     <link rel="stylesheet" href="./assets/css/styles.css">
 
+    <script src="assets/js/main.js" defer type="module"></script>
+
     <title>SPA Universe</title>
 </head>
 <body>
@@ -17,9 +19,9 @@
     <header class="header">
         <nav class="header__nav">
             <img src="./assets/imgs/logo.svg" alt="Logo do site">
-            <a href="/home">Home</a>
-            <a href="/universo">O Universo</a>
-            <a href="/Exploracao">Exploração</a>
+            <a onclick="router()" href="/">Home</a>
+            <a onclick="router()" href="/universo">O Universo</a>
+            <a onclick="router()" href="/exploracao">Exploração</a>
         </nav>
     </header>
 
