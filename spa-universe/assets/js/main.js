@@ -6,5 +6,7 @@ router.routesAdd('/', '/assets/pages/home.html');
 router.routesAdd('/universo', '/assets/pages/universo.html');
 router.routesAdd('/exploracao', '/assets/pages/exploracao.html');
 
+router.handler();
 
-window.router = router.router;
+window.router = () => router.router;
+window.handler = router.handler;
