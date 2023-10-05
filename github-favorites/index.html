@@ -16,16 +16,16 @@
     <div id="app">
         <header class="header">
             <h1>GitHub Favorites</h1>
-            <div>
+            <div class="search">
                 <label class="sr-only" for="input-search">Usuário do GitHub</label>
                 <input type="text" id="input-search" placeholder="Usuário do github">
+                <button>+</button>
             </div>
-            <button>+</button>
         </header>
 
         <div>
 
-            <table>
+            <table class="table">
                 <thead>
                     <tr>
                         <th>Usuários</th>
@@ -37,23 +37,23 @@
 
                 <tbody>
                     <tr>
-                        <td>
+                        <td class="table__user">
                             <img src="https://github.com/viniciusxsousa.png" alt="Foto de perfil do usuário">
                             <a href="#">Vinicius Sousa <span>viniciusxsousa</span></a>
                         </td>
-                        <td>23</td>
-                        <td>10</td>
-                        <td>X</td>
+                        <td class="table__repository">23</td>
+                        <td class="table__followers">10</td>
+                        <td class="table__action"><button>x</button></td>
                     </tr>
 
                     <tr>
-                        <td>
+                        <td class="table__user">
                             <img src="https://github.com/filipedeschamps.png" alt="Foto de perfil do usuário">
                             <a href="#">Filipe Deschamps <span>filipedeschamps</span></a>
                         </td>
-                        <td>200</td>
-                        <td>5000</td>
-                        <td>X</td>
+                        <td class="table__repository">200</td>
+                        <td class="table__followers">5000</td>
+                        <td class="table__action"><button>x</button></td>
                     </tr>
                 </tbody>
             </table>
