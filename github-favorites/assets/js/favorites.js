@@ -30,6 +30,10 @@ export class Favorites {
         this.users = JSON.parse(localStorage.getItem('@github-favorite:')) || []
     }
 
+    async add(userName) {
+        const user = await GithubUser.search(userName);
+    }
+
     delete(user) {
        const filterdUser = this.users.filter((element) => element.login != user.login);
 
@@ -45,7 +49,8 @@ export class FavoritesView extends Favorites {
 
         this.tbody = this.root.querySelector('table tbody');
 
-        this.update();        
+        this.update();
+        this.onAdd();   
     }
 
     update() {
@@ -75,6 +80,15 @@ export class FavoritesView extends Favorites {
     }
 
 
+    onAdd() {
+        const button = this.root.querySelector('.search button');
+
+        button.onclick = () => {
+            const { value } = document.querySelector('.search input');
+
+            this.add(value);
+        }
+    }
 
     createRow() {
         const tr = document.createElement('tr');
