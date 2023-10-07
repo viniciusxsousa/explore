@@ -14,7 +14,7 @@ export class Favorites {
             },
             {
                 login: 'rafaballerini',
-                name: 'Vinicius Sousa',
+                name: 'Rafaella Ballerini',
                 public_repos: '49',
                 followers: '46.9k'
             }
