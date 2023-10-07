@@ -1,3 +1,6 @@
+
+
+
 export class Favorites {
     constructor(root) {
         this.root = document.querySelector(root);
@@ -5,20 +8,7 @@ export class Favorites {
     }
 
     load() {
-        this.users = [
-            {
-                login: 'viniciusxsousa',
-                name: 'Vinicius Sousa',
-                public_repos: '20',
-                followers: '10'
-            },
-            {
-                login: 'rafaballerini',
-                name: 'Rafaella Ballerini',
-                public_repos: '49',
-                followers: '46.9k'
-            }
-        ]
+        this.users = JSON.parse(localStorage.getItem('@github-favorites:')) || [];
     }
 
     delete(user) {
