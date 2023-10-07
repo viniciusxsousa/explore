@@ -22,16 +22,33 @@ export class Favorites {
     constructor(root) {
         this.root = document.querySelector(root);
         this.load();
-        GithubUser.search('viniciusxsousa').then(user => console.log(user));
-
+        /* GithubUser.search('viniciusxsousa').then(user => console.log(user)); */
     }
 
     load() {
         this.users = JSON.parse(localStorage.getItem('@github-favorite:')) || []
     }
 
+    save() {
+        localStorage.setItem('@github-favorite:', JSON.stringify(this.users));
+    }
+
     async add(userName) {
-        const user = await GithubUser.search(userName);
+
+        try{
+            const user = await GithubUser.search(userName);
+
+            if(user.name === undefined) {
+                throw new Error('Usuário não encontrado!')
+            }
+
+            this.users = [user, ...this.users];
+            this.update();
+            this.save();
+
+        } catch(erro) {
+            alert(erro.message);
+        }
     }
 
     delete(user) {
@@ -40,6 +57,7 @@ export class Favorites {
        this.users = filterdUser;
 
        this.update(this.users);
+       this.save(); 
     }
 }
 
