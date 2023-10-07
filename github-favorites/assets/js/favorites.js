@@ -20,6 +20,12 @@ export class Favorites {
             }
         ]
     }
+
+    delete(user) {
+       const filterdUser = this.users.filter((element) => element.login != user.login);
+
+       console.log(filterdUser);
+    }
 }
 
 export class FavoritesView extends Favorites {
@@ -43,11 +49,21 @@ export class FavoritesView extends Favorites {
             row.querySelector('.table__user a span').innerText = user.login;
             row.querySelector('.table__repository').innerText = user.public_repos;
             row.querySelector('.table__followers').innerHTML = user.followers;
+            
+            row.querySelector('.table__action').onclick = () => {
+                const isOk = confirm(`Você deseja excluir ${user.name}`);
+                
+                if(isOk) {
+                    this.delete(user);
+                }
+            }
 
             this.tbody.append(row);
         } )
 
     }
+
+
 
     createRow() {
         const tr = document.createElement('tr');
