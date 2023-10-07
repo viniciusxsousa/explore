@@ -86,6 +86,7 @@ export class FavoritesView extends Favorites {
 
             row.querySelector('.table__user img').src = `https://github.com/${user.login}.png`;
             row.querySelector('.table__user img').alt = `Foto do perfil de ${user.name}`;
+            row.querySelector('.table__user a').href= `https://github.com/${user.login}`;
             row.querySelector('.table__user a p').innerText = user.name;
             row.querySelector('.table__user a span').innerText = user.login;
             row.querySelector('.table__repository').innerText = user.public_repos;
@@ -121,7 +122,7 @@ export class FavoritesView extends Favorites {
         tr.innerHTML = ` 
             <td class="table__user">
             <img src="https://github.com/viniciusxsousa.png" alt="Foto de perfil do usuário">
-            <a href="#"><p>Vinicius Sousa</p><span>viniciusxsousa</span></a>
+            <a href="#" target='_black'><p>Vinicius Sousa</p><span>viniciusxsousa</span></a>
             </td>
             <td class="table__repository">23</td>
             <td class="table__followers">10</td>
