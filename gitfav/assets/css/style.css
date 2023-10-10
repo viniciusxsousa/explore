@@ -13,6 +13,11 @@
     --background-color: #000;
     --background-input: #06181C;;
     --background-btn: #065E7C;
+    --background-tr-odd: rgba(6, 22, 27, 0.50);
+    --borde-table: #4A808C;
+    --background-th: #043444;
+    --txt-table: #E1E1E6;
+    --txt--table-button: #F75A68;
 }
 
 .sr-only {
@@ -80,4 +85,75 @@ body {
     font-size: 1.4rem;
     font-weight: 700;
     text-transform: uppercase;
+}
+
+.table {
+    margin-top: 8.7rem;
+    border: 1px solid var(--borde-table);
+    color: var(--txt-primary);
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table__thead th{
+    padding: 1.6rem 4rem;
+    background-color: var(--background-th);
+    text-align: left;
+    color: var(--txt-table);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.table tbody tr td {
+    padding: 1.6rem 4rem;
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: var(--background-tr-odd);
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: var(--background-input);
+    border: 1px solid var(--borde-table);
+}
+
+.table__tdUser {
+    display: flex;
+    align-items: center;
+    gap: 1rem
+}
+
+.table__tdUser img {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+}
+
+.table__tdUser a {
+    text-decoration: none;
+    color: var(--txt-table);
+}
+
+.table__tdUser a div p {
+    font-weight: 700;
+    color: var(--txt-table);
+}
+
+.table__tdUser a div sppan {
+    font-weight: 400;
+    color: var(--txt-table)
+}
+
+.table__tdRepos {
+    font-weight: 700;
+}
+
+.table__tdFollew {
+    font-weight: 700;
+}
+
+.table__tdBtn {
+    font-weight: 700;
+    color: var(--txt--table-button);
+    cursor: pointer;
 }
