@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --font-primary: 'Roboto', sans-serif;
+    --txt-primary: #fff;
+    --background-color: #000;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    margin: -1px;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+body, input, button, a{
+    font-family: var(--font-primary);
+}
+
+body {
+    font-size: 1.6rem;
+    color: var(--color-txt-primary);
+    background-color: #000;
+}
+
+#app {
+    padding: 11.5rem 16rem 0 16rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
