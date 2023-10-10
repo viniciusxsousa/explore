@@ -9,7 +9,10 @@
 
     --font-primary: 'Roboto', sans-serif;
     --txt-primary: #fff;
+    --txt-placeholder: #7C7C8A;
     --background-color: #000;
+    --background-input: #06181C;;
+    --background-btn: #065E7C;
 }
 
 .sr-only {
@@ -42,4 +45,39 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.header__input {
+    border: none;
+    padding: 1.6rem;
+    width: 46.2rem;
+    border-radius: .5rem;
+    background-color: var(--background-input);
+}
+
+.header__input::placeholder {
+    color: var(--txt-placeholder);
+    font-family: var(--font-primary);
+    font-size: 1.6rem;
+}
+
+.input-wrap {
+    display: flex;
+    gap: .8rem
+}
+
+.header__button {
+    width: 17rem;
+    height: 4.8rem;
+    padding: 1.2rem 3.2rem;
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    border-radius: .5rem;
+    background-color: var(--background-btn);
+    border: none;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
 }
