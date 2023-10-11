@@ -20,7 +20,7 @@ export class favoritesView extends Gitfavorites {
         this.users.forEach( (user) => {
             const row = this.createRow();
 
-            this.table.append(row);
+            this.table.querySelector('tbody').append(row);
         } )
         
         if(this.users.length === 0) {
