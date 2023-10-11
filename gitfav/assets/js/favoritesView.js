@@ -20,6 +20,16 @@ export class favoritesView extends Gitfavorites {
         this.users.forEach( (user) => {
             const row = this.createRow();
 
+            row.querySelector('.table__tdUser img').src = `https://github.com/${user.login}.png`;
+            row.querySelector('.table__tdUser img').alt = `Imagem do ${user.name}`;
+            row.querySelector('.table__tdUser a').href = `https://github.com/${user.login}`;
+            row.querySelector('.table__tdUser div p').textContent = user.name;
+            row.querySelector('.table__tdUser div span').textContent = user.login;
+            row.querySelector('.table__tdRepos').textContent = user.public_repos;
+            row.querySelector('.table__tdFollew').textContent = user.followers;
+
+
+
             this.table.querySelector('tbody').append(row);
         } )
         
@@ -35,7 +45,7 @@ export class favoritesView extends Gitfavorites {
 
         row.innerHTML = `<td class="table__tdUser">
                             <img src="https://github.com/viniciusxsousa.png" alt="Imagem do vinicius">
-                            <a href="https://github.com/viniciusxsousa.png">                        
+                            <a href="https://github.com/viniciusxsousa">                        
                             <div>
                                 <p>Viniciu Sousa </p>
                                 <span>/viniciusxsousa</span>
