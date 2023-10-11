@@ -22,8 +22,6 @@ export class favoritesView extends Gitfavorites {
 
             this.table.append(row);
         } )
-
-        this.rows = this.table.querySelectorAll('tbody tr');
         
         if(this.users.length === 0) {
             this.noFavorites = this.body.querySelector('.no-favorites');
