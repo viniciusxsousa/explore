@@ -1,5 +1,10 @@
 export class Gitfavorites {
     constructor() {
-        this.users = [];
+        this.users = [{
+            login: 'viniciusxsousa',
+            name: 'name',
+            public_repos: '24',
+            followers: '13',
+        }];
     }
 }

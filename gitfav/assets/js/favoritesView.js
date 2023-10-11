@@ -25,4 +25,23 @@ export class favoritesView extends Gitfavorites {
             this.noFavorites.classList.add('no-favorites-active');
         }
     }
+
+    createRow() {
+        const row = document.createElement('tr');
+
+        row.innerHTML = `<td class="table__tdUser">
+                            <img src="https://github.com/viniciusxsousa.png" alt="Imagem do vinicius">
+                            <a href="https://github.com/viniciusxsousa.png">                        
+                            <div>
+                                <p>Viniciu Sousa </p>
+                                <span>/viniciusxsousa</span>
+                            </div>
+                            </a>
+                        </td>
+                        <td class="table__tdRepos">25</td>
+                        <td class="table__tdFollew" >13</td>
+                        <td class="table__tdBtn">Remover</td>`
+                        
+        return row
+    }
 }
