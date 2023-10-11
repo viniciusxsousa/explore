@@ -157,3 +157,9 @@ body {
     color: var(--txt--table-button);
     cursor: pointer;
 }
+
+.no-favorites {
+    color: var(--txt-primary);
+    background-color: var(--background-input);
+    height: 62.4rem;
+}
