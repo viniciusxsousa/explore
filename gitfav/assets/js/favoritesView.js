@@ -17,6 +17,12 @@ export class favoritesView extends Gitfavorites {
             row.remove();
         })
 
+        this.users.forEach( (user) => {
+            const row = this.createRow();
+
+            this.table.append(row);
+        } )
+
         this.rows = this.table.querySelectorAll('tbody tr');
         
         if(this.rows.length === 0) {
@@ -41,7 +47,7 @@ export class favoritesView extends Gitfavorites {
                         <td class="table__tdRepos">25</td>
                         <td class="table__tdFollew" >13</td>
                         <td class="table__tdBtn">Remover</td>`
-                        
+
         return row
     }
 }
