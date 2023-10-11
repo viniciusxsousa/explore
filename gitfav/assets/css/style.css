@@ -18,6 +18,7 @@
     --background-th: #043444;
     --txt-table: #E1E1E6;
     --txt--table-button: #F75A68;
+    --txt-no-favorites: #4E5455;
 }
 
 .sr-only {
@@ -161,5 +162,26 @@ body {
 .no-favorites {
     color: var(--txt-primary);
     background-color: var(--background-input);
-    height: 62.4rem;
+    height: 42.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+    border-bottom: 1px solid var(--borde-table);
+    border-left: 1px solid var(--borde-table);
+    border-right: 1px solid var(--borde-table);
+}
+
+.no-favorites.no-favorites-disable{
+    display: none;
+}
+
+.no-favorites.no-favorites-active{
+    display: flex;
+}
+
+.no-favorites p {
+    color: var(--txt-no-favorites);
+    font-size: 4rem;
+    font-weight: 700;
 }
