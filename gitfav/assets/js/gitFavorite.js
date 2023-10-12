@@ -20,4 +20,21 @@ export class Gitfavorites {
 
         this.update();
     }
+
+    add(user) {
+        try {
+
+            const userExist = this.users.find((element) => element.login === user);
+
+            if(userExist) {
+                throw new Error('Usuário já cadastrado');
+            }
+
+            
+
+        }catch(error) {
+            alert(error);
+        }
+
+    }
 }
