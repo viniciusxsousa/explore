@@ -7,6 +7,7 @@ export class favoritesView extends Gitfavorites {
         this.body = document.querySelector(appElement);
 
         this.update();
+        this.buttonAdd();
     }
     
     update() {
@@ -63,5 +64,16 @@ export class favoritesView extends Gitfavorites {
                         <td class="table__tdBtn">Remover</td>`
 
         return row
+    }
+
+    buttonAdd() {
+        const button = this.body.querySelector('.header__button');
+        const input = this.body.querySelector('#user');
+
+        button.addEventListener('click', () => {
+            const userLogin = input.value;
+
+            this.add(userLogin);
+        })
     }
 }
