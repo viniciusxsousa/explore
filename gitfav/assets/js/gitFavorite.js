@@ -1,16 +1,6 @@
 export class Gitfavorites {
     constructor() {
-        this.users = [{
-            login: 'viniciusxsousa',
-            name: 'name',
-            public_repos: '24',
-            followers: '13',
-        }, {
-            login: 'rafaballerini',
-            name: 'Rafaela Ballerini',
-            public_repos: '50',
-            followers: '130',
-        }];
+        this.load()
     }
 
     search(login) {
@@ -35,6 +25,7 @@ export class Gitfavorites {
 
         this.users = filterUser;
 
+        this.save();
         this.update();
     }
 
@@ -55,6 +46,7 @@ export class Gitfavorites {
                     }
 
                     this.users = [data, ...this.users];
+                    this.save();
                     this.update();
                 })
 
@@ -63,5 +55,13 @@ export class Gitfavorites {
             alert(error);
         }
 
+    }
+
+    save() {
+        localStorage.setItem('@git-favorites:', JSON.stringify(this.users));
+    }
+
+    load() {
+        this.users = JSON.parse(localStorage.getItem('@git-favorites:')) || [];
     }
 }
