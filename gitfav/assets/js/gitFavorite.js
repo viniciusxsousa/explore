@@ -13,6 +13,23 @@ export class Gitfavorites {
         }];
     }
 
+    search(login) {
+        const endpoint = `https://api.github.com/users/${login}` 
+
+        return fetch(endpoint)
+                .then(data => JSON.parse(data))
+                .then(data => {
+                    const { login, name, public_repos, followers } = data
+
+                    return {
+                        login,
+                        name,
+                        public_repos,
+                        followers,
+                    }
+                })
+    }
+
     delete(user) {
         const filterUser = this.users.filter((element) => element.login != user.login);
 
@@ -30,7 +47,7 @@ export class Gitfavorites {
                 throw new Error('Usuário já cadastrado');
             }
 
-            
+
 
         }catch(error) {
             alert(error);
