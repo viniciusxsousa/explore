@@ -17,7 +17,7 @@ export class Gitfavorites {
         const endpoint = `https://api.github.com/users/${login}` 
 
         return fetch(endpoint)
-                .then(data => JSON.parse(data))
+                .then(data => data.json())
                 .then(data => {
                     const { login, name, public_repos, followers } = data
 
@@ -47,6 +47,16 @@ export class Gitfavorites {
                 throw new Error('Usuário já cadastrado');
             }
 
+            this.search(user)
+                .then(data => {
+
+                    if(data.login === undefined) {
+                        throw new Error('Usuário não encontrado');
+                    }
+
+                    this.users = [data, ...this.users];
+                    this.update();
+                })
 
 
         }catch(error) {
