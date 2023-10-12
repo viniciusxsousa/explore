@@ -28,7 +28,13 @@ export class favoritesView extends Gitfavorites {
             row.querySelector('.table__tdRepos').textContent = user.public_repos;
             row.querySelector('.table__tdFollew').textContent = user.followers;
 
+            row.querySelector('.table__tdBtn').addEventListener('click', () => {
+                const isOk = confirm(`Quer deletar o ${user.name}`);
 
+                if(isOk){
+                    this.delete(user);
+                }
+            })
 
             this.table.querySelector('tbody').append(row);
         } )
