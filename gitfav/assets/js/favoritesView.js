@@ -45,6 +45,12 @@ export class favoritesView extends Gitfavorites {
             this.noFavorites.classList.remove('no-favorites-disable');
             this.noFavorites.classList.add('no-favorites-active');
         }
+
+        if(this.users.length > 0) {
+            this.noFavorites = this.body.querySelector('.no-favorites');
+            this.noFavorites.classList.remove('no-favorites-active');
+            this.noFavorites.classList.add('no-favorites-disable');
+        }
     }
 
     createRow() {
