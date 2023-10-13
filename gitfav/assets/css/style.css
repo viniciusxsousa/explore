@@ -54,6 +54,7 @@ body {
 }
 
 .header__input {
+    color: var(--txt-primary);
     border: none;
     padding: 1.6rem;
     width: 46.2rem;
