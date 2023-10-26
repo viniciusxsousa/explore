@@ -6,8 +6,8 @@ app.get('/', (req, res) => {
     res.send('Hello Word');
 });
 
-app.get('/user/:id', (req, res) => {
-    res.send(`O id do usuário é ${req.params.id}`);
+app.get('/user/:id/:name', (req, res) => {
+    res.send(`O id do usuário é ${req.params.id} e o seu nome é ${req.params.name}`);
 })
 
 app.get('/product', (req, res) => {
