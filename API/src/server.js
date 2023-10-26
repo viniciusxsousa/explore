@@ -2,18 +2,8 @@ const express = require('express');
 
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send('Hello Word');
-});
-
-app.get('/user/:id/:name', (req, res) => {
-    res.send(`O id do usuário é ${req.params.id} e o seu nome é ${req.params.name}`);
-})
-
-app.get('/product', (req, res) => {
-    const {page, limit} = req.query;
-
-    res.send(`Página ${page}, itens por página ${limit}`);
+app.post('/user', (req, res)=>{
+    res.send('Você fez um pedido do tipo POST');
 })
 
 const PORT = 3333;
