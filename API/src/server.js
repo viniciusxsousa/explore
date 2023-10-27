@@ -1,13 +1,10 @@
 const express = require('express');
 
 const app = express();
+const routes = require('./routes');
+
 app.use(express.json());
-
-app.post('/user', (req, res)=>{
-    const { name, email, password } = req.body
-
-    res.send({name, email, password});
-})
+app.use(routes);
 
 const PORT = 3333;
 
