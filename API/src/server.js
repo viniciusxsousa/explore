@@ -1,9 +1,12 @@
 const express = require('express');
 
 const app = express();
+app.use(express.json());
 
 app.post('/user', (req, res)=>{
-    res.send('Você fez um pedido do tipo POST');
+    const { name, email, password } = req.body
+
+    res.send({name, email, password});
 })
 
 const PORT = 3333;
