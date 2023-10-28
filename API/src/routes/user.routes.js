@@ -6,8 +6,13 @@ const UserControllers = require("../controllers/UserControllers");
 
 const userControllers = new UserControllers();
 
-userRoutes.post('/', (req, res)=>{
-    userControllers.create(req, res);
-})
+function myMiddleware(req, res, next) {
+    console.log('exibindo os dados da requisição:');
+    console.log(req.body);
+    next();
+}
+
+
+userRoutes.post('/', myMiddleware, userControllers.create);
 
 module.exports = userRoutes;
