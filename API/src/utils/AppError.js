@@ -7,3 +7,5 @@ class AppError {
         this.status = status;
     }
 }
+
+module.exports = AppError
