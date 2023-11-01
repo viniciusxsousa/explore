@@ -23,6 +23,39 @@ class UserControllers {
         return res.status(201).json();
 
     }
+
+    async update(req, res) {
+        const { name, email } = req.body;
+        const { id } = req.params;
+
+        const database = await sqliteConnection();
+        const user = await database.get('SELECT * FROM users WHERE id = (?)', [id]);
+
+        if(!user) {
+            throw new AppError('Usuário não encontrado');
+        }
+
+        const userWithUpdateEmail = await database.get('SELECT * FROM users WHERE email = (?)', [email]);
+/*         console.log(userWithUpdateEmail);
+        console.log(user); */
+
+        if(userWithUpdateEmail && userWithUpdateEmail.id !== user.id) {
+            throw new AppError('Este e-mail já está em uso.');
+        }
+
+        user.name = name;
+        user.email = email;
+
+        await database.run(`
+            UPDATE users SET
+            name = ?,
+            email = ?
+            WHERE id = ?`,
+            [user.name, user.email, id]
+            )
+
+        return res.json();
+    }
 }
 
 module.exports = UserControllers
