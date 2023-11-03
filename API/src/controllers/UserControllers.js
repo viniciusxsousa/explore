@@ -1,6 +1,6 @@
 const AppError = require('../utils/AppError');
 const sqliteConnection = require('../database/sqlite');
-const { hash } = require('bcryptjs');
+const { hash, compare } = require('bcryptjs');
 
 class UserControllers {
     async create(req, res) {
@@ -25,7 +25,7 @@ class UserControllers {
     }
 
     async update(req, res) {
-        const { name, email } = req.body;
+        const { name, email, password, old_password } = req.body;
         const { id } = req.params;
 
         const database = await sqliteConnection();
@@ -44,12 +44,27 @@ class UserControllers {
         user.name = name;
         user.email = email;
 
+        if(password && !old_password) {
+            throw new AppError('Os dois campos de senha precisa ser informado.');
+        }
+
+        if(password && old_password) {
+            const checkOldPassword = await compare(old_password, user.password);
+
+            if(!checkOldPassword) {
+                throw new AppError('A senha antiga não está correta');
+            }
+
+            user.password = await hash(password, 8);
+        }
+
         await database.run(`
             UPDATE users SET
             name = ?,
-            email = ?
+            email = ?,
+            password = ?
             WHERE id = ?`,
-            [user.name, user.email, id]
+            [user.name, user.email, user.password, id]
             )
 
         return res.json();
