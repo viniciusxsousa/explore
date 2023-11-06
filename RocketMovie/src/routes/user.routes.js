@@ -2,6 +2,10 @@ const {Router} = require("express");
 
 const userRouter = Router();
 
-userRouter.post('/', () => console.log('função de cadastrar usuário'));
+const UserControllers = require('../controllers/UserControllers');
+
+const userControllers = new UserControllers();
+
+userRouter.post('/', userControllers.create);
 
 module.exports = userRouter
