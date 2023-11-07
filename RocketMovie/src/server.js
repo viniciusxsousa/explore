@@ -1,11 +1,15 @@
 require('express-async-errors');
 
+const database = require('./database/knex');
+
 const express = require('express');
 
 const AppError = require('./utils/AppError');
 
 const app = express();
 const routes = require('./routes');
+
+database();
 
 app.use(express.json());
 app.use(routes);
