@@ -1,6 +1,6 @@
 const AppError = require('../utils/AppError');
 const knex = require('../database/knex');
-const { hash } = require('bcryptjs');
+const { hash, compare } = require('bcryptjs');
 
 class UserControllers{
     async create(req, res){
@@ -34,6 +34,44 @@ class UserControllers{
             email,
             hashPassword
         });
+    }
+
+    async update(req, res) {
+        const {name, email, old_password, password} = req.body;
+        const {id} = req.params;
+
+        const user = await knex('users').where({id});
+        
+        if(!user[0]) {
+            throw new AppError('Usuário não encontrado.');
+        }
+        
+        const userWithEmail = await knex('users').where({email})
+
+        if(userWithEmail[0] && userWithEmail[0].id != id) {
+            throw new AppError('Este e-mail já está em uso.');
+        } 
+
+        if(password && !old_password || !password && old_password) {
+            throw new AppError('Os dois campos de senha precisam ser preenchidos.')
+        }
+        
+        if(password && old_password) {
+            const checkPassword = await compare(old_password, user[0].password);
+
+            if(!checkPassword) {
+                throw new AppError('A senhas não coferem');
+            }
+
+            user[0].password = await hash(password, 8);
+        }
+
+        user[0].name = name ?? user[0].name;
+        user[0].email = email ?? user[0].email;
+
+        await knex('users').where({id}).update(user[0]);
+
+        return res.json(userWithEmail);
     }
 }
 
