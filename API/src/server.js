@@ -1,4 +1,5 @@
 require('express-async-errors');
+
 const migrations = require('./database/sqlite/migrations');
 const express = require('express');
 

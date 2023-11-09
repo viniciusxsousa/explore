@@ -68,6 +68,7 @@ class UserControllers{
 
         user[0].name = name ?? user[0].name;
         user[0].email = email ?? user[0].email;
+        user[0].updated_at = knex.fn.now();
 
         await knex('users').where({id}).update(user[0]);
 
