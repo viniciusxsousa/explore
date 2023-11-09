@@ -54,6 +54,48 @@ class MovieControllers{
             tags
         });
     }
+
+    async all(req, res) {
+        const {user_id, title, tags} = req.query;
+
+        let movie;
+
+        if(tags){
+            const filterTags = tags.split(',').map(tag => tag.trim());
+
+            movie = await knex('movie_tags')
+            .select([
+                "movie_notes.id",
+                "movie_notes.title",
+                "movie_notes.description",
+                "movie_notes.rating",
+                "movie_notes.user_id"
+            ])
+            .where("movie_notes.user_id", user_id)
+            .whereLike("title", `%${title}%`)
+            .whereIn('name', filterTags)
+            .innerJoin('movie_notes', 'movie_notes.id', "movie_tags.movie_id")
+            .orderBy('movie_notes.title');
+
+        }else {
+            movie = await knex('movie_notes')
+            .where({user_id})
+            .whereLike('title', `%${title}%`)
+            .orderBy('title');
+        }
+
+        const userTags = await knex('movie_tags').where({user_id});
+        const MovieWithTags = movie.map( movie => {
+            const  movieTags = userTags.filter( tag => tag.movie_id === movie.id );
+
+            return {
+                ...movie,
+                tags: movieTags
+            }
+        } )
+
+        res.json(MovieWithTags);
+    }
 }
 
 module.exports = MovieControllers
