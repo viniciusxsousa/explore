@@ -42,6 +42,14 @@ class MovieControllers{
             user_id,
         })
     }
+
+    async show(req, res) {
+        const {id} = req.params;
+
+        const movie = await knex('movie_notes').where({id}).first();
+
+        res.json(movie);
+    }
 }
 
 module.exports = MovieControllers
