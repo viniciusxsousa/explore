@@ -47,8 +47,12 @@ class MovieControllers{
         const {id} = req.params;
 
         const movie = await knex('movie_notes').where({id}).first();
+        const tags = await knex('movie_tags').where({movie_id: id}).orderBy('name');
 
-        res.json(movie);
+        res.json({
+            ...movie,
+            tags
+        });
     }
 }
 
