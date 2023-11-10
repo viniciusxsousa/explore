@@ -96,6 +96,16 @@ class MovieControllers{
 
         res.json(MovieWithTags);
     }
+
+    async delete(req, res) {
+        const { id } = req.params;
+
+        await knex('movie_notes').where({id}).delete();
+
+        res.json({
+            message: "Filme deletado."
+        })
+    }
 }
 
 module.exports = MovieControllers
