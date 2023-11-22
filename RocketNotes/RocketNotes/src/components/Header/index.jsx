@@ -1,4 +1,6 @@
-import { Conteiner, Profile} from "./styles";
+import { RiShutDownLine } from 'react-icons/ri';
+
+import { Conteiner, Profile, Logout} from "./styles";
 
 export function Header(){
     return (
@@ -14,6 +16,10 @@ export function Header(){
                     <strong>Vinicius Sousa</strong>
                 </div>
             </Profile>
+
+            <Logout>
+                <RiShutDownLine/>
+            </Logout>
         </Conteiner>
     )
 }
