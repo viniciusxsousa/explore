@@ -1,13 +1,13 @@
 import { Conteiner } from "./styles" 
 
 import { Button } from "../components/Button"
+import { Header } from "../components/Header"
 
 export function Details() {
     return (
         <Conteiner>
-            <h1>Fala pivete!</h1>
+            <Header></Header>
             <Button title="Salvar"/>
-            <Button title="Salvar" loading/>
         </Conteiner>
     )
 }
