@@ -7,7 +7,7 @@ export function Home(){
         <Container>
 
             <Brand>
-                RocketNotes
+                <h1>RocketNotes</h1>
             </Brand>
 
             <Header></Header>
