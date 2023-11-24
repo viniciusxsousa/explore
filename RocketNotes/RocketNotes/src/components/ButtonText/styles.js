@@ -5,5 +5,5 @@ export const Conteiner = styled.button`
     background-color: transparent;
 
     font-size: 16px;
-    color: ${({theme, isActived}) => isActived ? theme.COLORS.ORANGE : theme.COLORS.GRAY_100};
+    color: ${({theme, $isactived}) => $isactived  === 'true' ? theme.COLORS.ORANGE : theme.COLORS.GRAY_100};
 `
