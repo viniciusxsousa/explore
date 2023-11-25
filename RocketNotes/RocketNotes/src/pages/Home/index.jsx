@@ -4,8 +4,17 @@ import {ButtonText} from '../../components/ButtonText'
 import { Header } from '../../components/Header'
 import { FiPlus, FiSearch} from 'react-icons/fi'
 import { Input } from '../../components/Input'
+import { Section } from '../../components/Section'
+import { Note } from '../../components/Note'
 
 export function Home(){
+    
+    const notas = [
+        {title: 'Exemplo 01', tags: [{id: 1, name: 'react'}, {id: 2, name: 'Node.js'}]},
+        {title: 'Exemplo 02', tags: [{id:3, name: 'HTML'}]}
+    ] 
+
+
     return (
         <Container>
 
@@ -27,7 +36,13 @@ export function Home(){
                 <Input icon={FiSearch} placeholder='Pesquise pelo título'/>
             </Search>
 
-            <Content></Content>
+            <Content>
+                <Section title="Minha notas">
+                    { 
+                        notas.map( nota => <Note data={nota}/> )
+                    }
+                </Section>
+            </Content>
 
             <NewNote>
                 <FiPlus/>
