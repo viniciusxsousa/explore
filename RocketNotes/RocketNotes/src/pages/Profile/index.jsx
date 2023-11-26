@@ -1,6 +1,6 @@
-import { Container, Header, Form } from './styles'
+import { Container, Header, Form, Avatar } from './styles'
 
-import { FiArrowLeft, FiUser, FiMail, FiLock } from 'react-icons/fi'
+import { FiArrowLeft, FiUser, FiMail, FiLock, FiCamera } from 'react-icons/fi'
 
 import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
@@ -13,6 +13,22 @@ export function Profile(){
             </Header>
 
             <Form>
+                <Avatar>
+                    <img 
+                        src="https://www.github.com/viniciusxsousa.png" 
+                        alt="foto do usuário" 
+                    />
+
+                    <label htmlFor="avatar">
+                        <FiCamera />
+
+                        <input 
+                            type="file"
+                            id='avatar' 
+                        />
+                    </label>
+
+                </Avatar>
 
                 <Input
                     placeholder='Nome'

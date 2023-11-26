@@ -23,5 +23,51 @@ export const Header = styled.header`
 
 export const Form = styled.form`
     max-width: 350px;
-    margin: 30px auto;
+    margin: -100px auto;
+
+    > div:nth-child(4) {
+        margin-top: 28px;
+    }
+`
+
+export const Avatar = styled.div`
+    position: relative;
+    margin: 0 auto 32px;
+
+    width: 186px;
+    height: 186px;
+
+    > img {
+        width: 186px;
+        height: 186px;
+        border-radius: 50%;
+    }
+
+    > label {
+        width: 46px;
+        height: 46px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: absolute;
+        bottom: 7px;
+        right: 7px;
+
+        background-color: ${({theme}) => theme.COLORS.ORANGE};
+        border-radius: 50%;
+
+        cursor: pointer;
+
+        input {
+            display: none;
+        }
+
+        svg {
+            width: 24px;
+            height: 24px;
+            color: ${({theme}) => theme.COLORS.BACKGROUND_800};
+        }
+    }
 `
