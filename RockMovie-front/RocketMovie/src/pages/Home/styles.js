@@ -10,5 +10,18 @@ export const Container = styled.div`
 
     > main {
         grid-area: 'content';
+        
+        padding: 53px 123px 30px;
+
+        div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            button {
+                width: 207px;
+                padding: 16px;
+            }
+        }
     }
 `
