@@ -1,5 +1,7 @@
 import { Container } from './styles'
 
+import { FiSearch } from 'react-icons/fi'
+
 import { Input } from '../Input'
 
 export function Header(){
@@ -7,7 +9,7 @@ export function Header(){
         <Container>
             <h1>RocketMovies</h1>
             
-            <Input type='text' placeholder='Pesquise pelo título'/>
+            <Input icon={FiSearch} type='text' placeholder='Pesquise pelo título'/>
 
             <div className='profile'>                
                 <span>

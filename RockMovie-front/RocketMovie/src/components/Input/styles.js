@@ -7,6 +7,10 @@ export const Container = styled.div`
     background-color: ${({theme}) => theme.COLORS.BACKGROUND_100};
     border-radius: 10PX;
 
+    display: flex;
+    align-items: center;
+
+
     > input {
         width: 100%;
         height: 100%;
@@ -19,4 +23,9 @@ export const Container = styled.div`
             font-size: 14px;
         }
     }
+
+    > svg {
+        margin-left: 12px;
+        color: ${({theme}) => theme.COLORS.GRAY_200};
+    }    
 `
