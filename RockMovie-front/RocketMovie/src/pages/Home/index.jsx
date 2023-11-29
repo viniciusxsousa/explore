@@ -18,6 +18,9 @@ export function Home(){
               </div>
 
               <Card/>
+              <Card/>
+              <Card/>
+              <Card/>
           </main>
     </Container>
   )

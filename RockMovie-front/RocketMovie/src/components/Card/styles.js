@@ -2,8 +2,11 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
     background-color: ${({theme}) => theme.COLORS.BACKGROUND_200};
+    
     border-radius: 16px;
     padding: 32px;
+    margin-bottom: 16px;
+
 
     > h3 {
         color: ${({theme}) => theme.COLORS.WHITE_200};
