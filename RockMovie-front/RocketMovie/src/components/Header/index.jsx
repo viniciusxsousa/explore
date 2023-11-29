@@ -1,11 +1,15 @@
 import { Container } from './styles'
 
+import { Input } from '../Input'
+
 export function Header(){
     return(
         <Container>
             <h1>RocketMovies</h1>
-    
-            <div>                
+            
+            <Input type='text' placeholder='Pesquise pelo título'/>
+
+            <div className='profile'>                
                 <span>
                     <strong>Vinicius Sousa</strong>
                     sair

@@ -9,6 +9,7 @@ export const Container = styled.header`
     display: flex;
     justify-content: space-between;
     align-content: center;
+    gap: 64px;
 
     grid-area: 'header';
 
@@ -18,9 +19,10 @@ export const Container = styled.header`
         font-weight: 700;
     }
 
-    > div {
+    > div:nth-child(3) {
         display: flex;
         align-items: center;
+        width: 300px;
     }
 
     > div span {
