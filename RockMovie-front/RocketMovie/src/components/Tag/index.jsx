@@ -1,7 +1,7 @@
 import { Container } from './styles'
 
-export function Tag({title}) {
+export function Tag({title, brown}) {
     return(
-        <Container>{title}</Container>
+        <Container brown={brown}>{title}</Container>
     )
 }
