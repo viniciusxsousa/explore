@@ -16,6 +16,6 @@ export default {
 
 
         BLACK_100: '#1C1B1E',
-        BLACK__200: '#0D0C0F',
+        BLACK_200: '#0D0C0F',
     }
 }
