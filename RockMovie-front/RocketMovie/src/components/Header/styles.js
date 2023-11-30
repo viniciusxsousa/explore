@@ -11,7 +11,7 @@ export const Container = styled.header`
     align-content: center;
     gap: 64px;
 
-    grid-area: 'header';
+    grid-area: header;
 
     > h1 {
         color: ${({theme}) => theme.COLORS.PINK};
