@@ -32,8 +32,8 @@ export function New() {
                     </div>
 
                     <div className="buttons">
-                        <Button/>
-                        <Button/>
+                        <Button title='Excluir filme' isBlack/>
+                        <Button title='Salvar alterações'/>
                     </div>
 
                 </Content>

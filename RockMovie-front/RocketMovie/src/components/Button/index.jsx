@@ -1,10 +1,10 @@
 import { Container } from './styles'
 
-export function Button({icon: Icon}){
+export function Button({icon: Icon, title, isBlack}){
     return(
-        <Container>
+        <Container isBlack={isBlack}>
             {Icon && <Icon/>}
-            <p>Adicionar filme</p>
+            <p>{title}</p>
         </Container>
     )
 }
