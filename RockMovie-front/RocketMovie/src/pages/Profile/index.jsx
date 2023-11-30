@@ -4,11 +4,14 @@ import { FiUser, FiMail, FiLock, FiCamera } from 'react-icons/fi'
 
 import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
+import { ButtonTxt } from "../../components/ButtonTxt";
 
 export function Profile() {
     return(
         <Container>
-            <Header/>
+            <Header>
+                <ButtonTxt icon title='voltar' />
+            </Header>
 
             <Form>
 

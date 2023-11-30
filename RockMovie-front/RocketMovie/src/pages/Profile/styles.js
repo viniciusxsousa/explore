@@ -9,6 +9,9 @@ export const Header = styled.header`
     width: 100%;
     height: 144px;
     background-color: ${({theme}) => theme.COLORS.BACKGROUND_200};
+    display: flex;
+    align-items: center;
+    padding-left: 144px;
 `
 
 export const Form = styled.form`
