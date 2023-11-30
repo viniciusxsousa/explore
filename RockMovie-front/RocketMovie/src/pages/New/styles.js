@@ -40,6 +40,9 @@ export const Content = styled.div`
     }
 
     > div.marcadores {
+        display: flex;
+        gap: 24px;
+
         background-color: ${({theme}) => theme.COLORS.BLACK_200};
 
         border-radius: 8px;

@@ -4,6 +4,7 @@ import { Header } from '../../components/Header'
 import { ButtonTxt } from '../../components/ButtonTxt'
 import { Input } from "../../components/Input";
 import { Button } from '../../components/Button'
+import { TagItens } from "../../components/TagItens";
 
 export function New() {
     return(
@@ -26,7 +27,8 @@ export function New() {
                     <h3>Marcadores</h3>
 
                     <div className="marcadores">
-
+                        <TagItens value='React'/>
+                        <TagItens placeholder='Novo Marcador' isNew/>
                     </div>
 
                     <div className="buttons">
