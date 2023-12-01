@@ -21,7 +21,7 @@ export function SingUp(){
 
                 <Button title='Cadastrar' />
 
-                <ButtonTxt title='Voltar para o login' icon />
+                <ButtonTxt title='Voltar para o login' icon to='/'/>
 
             </Form>
             <BackgroundImg/>

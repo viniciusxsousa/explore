@@ -2,6 +2,8 @@ import { Container } from './styles'
 
 import { FiSearch } from 'react-icons/fi'
 
+import { Link } from 'react-router-dom'
+
 import { Input } from '../Input'
 
 export function Header(){
@@ -16,7 +18,9 @@ export function Header(){
                     <strong>Vinicius Sousa</strong>
                     sair
                 </span>
-                <img src="https://github.com/viniciusxsousa.png" alt="Foto do usuário" />
+                    <Link to='/profile'>
+                        <img src="https://github.com/viniciusxsousa.png" alt="Foto do usuário" />
+                    </Link>
             </div>
         </Container>
     )

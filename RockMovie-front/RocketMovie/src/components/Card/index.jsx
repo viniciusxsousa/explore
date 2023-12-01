@@ -6,7 +6,7 @@ import { Tag } from '../Tag';
 
 export function Card(){
     return(
-        <Container>
+        <Container to='/details/01'>
             <h3>Interestellar</h3>
 
             <div>

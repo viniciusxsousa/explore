@@ -10,7 +10,7 @@ export function Profile() {
     return(
         <Container>
             <Header>
-                <ButtonTxt icon title='voltar' />
+                <ButtonTxt icon title='voltar' to='/'/>
             </Header>
 
             <Form>

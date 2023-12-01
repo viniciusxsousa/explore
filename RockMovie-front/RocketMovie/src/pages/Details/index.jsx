@@ -13,7 +13,7 @@ export function Details(){
 
             <main>
                 <Content>
-                    <ButtonTxt title='voltar' icon/>
+                    <ButtonTxt title='voltar' icon to='/'/>
 
                     <div className="title">
                         <h2>Interestellar</h2>

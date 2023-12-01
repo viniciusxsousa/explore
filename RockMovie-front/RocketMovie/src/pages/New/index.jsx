@@ -13,7 +13,7 @@ export function New() {
 
             <main>
                 <Content>
-                    <ButtonTxt icon title='voltar'/>
+                    <ButtonTxt icon title='voltar' to='/'/>
 
                     <h2>Novo Filme</h2>
 

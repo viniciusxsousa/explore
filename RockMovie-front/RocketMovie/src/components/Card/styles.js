@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+import { Link } from 'react-router-dom'
+
+export const Container = styled(Link)`
+    display: block;
     background-color: ${({theme}) => theme.COLORS.BACKGROUND_200};
     
     border-radius: 16px;
