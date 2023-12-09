@@ -6,9 +6,14 @@ import { Button } from '../../components/Button'
 
 import backgroundImg from '../../assets/background.png'
 
+import { useAuth } from '../../hook/auth'
+
 import { FiMail, FiLock } from 'react-icons/fi'
 
 export function SignIn(){
+
+    const data = useAuth();
+
     return(
         <Container>
             <Form>
