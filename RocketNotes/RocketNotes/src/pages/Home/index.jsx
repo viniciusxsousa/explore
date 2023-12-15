@@ -13,6 +13,19 @@ import { Note } from '../../components/Note'
 
 export function Home(){
     const [tags, setTags] = useState([]);
+    const [tagsSelected, setTagsSelected] = useState([]);
+
+    function handleTagSelected(tagName) {
+        const alredyTag = tagsSelected.includes(tagName);
+
+        if(alredyTag) {
+            const tagsFilter = tagsSelected.filter(tag => tag !== tagName);
+            setTagsSelected(tagsFilter);
+        } else {
+            setTagsSelected(prevState => [...prevState, tagName]);
+        }
+
+    }
     
     const notas = [
         {title: 'Exemplo 01', tags: [{id: 1, name: 'react'}, {id: 2, name: 'Node.js'}]},
@@ -43,10 +56,22 @@ export function Home(){
 
             <Menu>
 
-                <li><ButtonText title='Todos' isActived/></li>
+                <li>
+                    <ButtonText 
+                        title='Todos' 
+                        onClick={() => setTagsSelected([])}
+                        isActived={tagsSelected.length === 0}
+                    />
+                </li>
 
                 { tags && tags.map( tag => (
-                    <li key={String(tag.id)} ><ButtonText title={tag.name} /></li>
+                    <li key={String(tag.id)} >
+                        <ButtonText 
+                            title={tag.name} 
+                            onClick={() => handleTagSelected(tag.name)}
+                            isActived={tagsSelected.includes(tag.name)}
+                        />
+                    </li>
                 )) }
 
             </Menu>
