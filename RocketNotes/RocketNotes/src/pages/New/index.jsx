@@ -44,6 +44,18 @@ export function New(){
     }
 
     async function handleNewNote() {
+        if(!title) {
+            return alert('Título é obrigatório.');
+        }
+
+        if(newLink) {
+            return alert('Você digitou um link, mas não salvou. Deseja salvar ? ');
+        }
+
+        if(newTag) {
+            return alert('Você digitou uma tag, mas não salvou. Deseja salvar ?')
+        }
+
         await api.post('/note', {
             title,
             description,
