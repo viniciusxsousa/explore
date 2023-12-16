@@ -19,7 +19,7 @@ export function Details() {
     const navigator = useNavigate();
 
     function handleBack() {
-        navigator('/');
+        navigator(-1);
     }
 
     async function handleRemove() {

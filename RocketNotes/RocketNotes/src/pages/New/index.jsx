@@ -64,7 +64,7 @@ export function New(){
         });
 
         alert('Nota cadastrada com sucesso!');
-        navigator('/');
+        navigator(-1);
     }
 
 
