@@ -15,7 +15,7 @@ function ensureAuthenticated(req, res, next) {
         const {sub: user_id} = verify(token, authConfig.jwt.secret);
 
         res.user = {
-           id: Number(user_id); 
+           id: Number(user_id)
         };
 
         return next();
