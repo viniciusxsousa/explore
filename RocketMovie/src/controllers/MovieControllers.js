@@ -4,7 +4,7 @@ const knex = require('../database/knex');
 class MovieControllers{
     async create(req, res) {
         const {title, description, rating, tags} = req.body;
-        const {user_id} = req.params;
+        const user_id = req.user.id;
 
         if(!title) {
             throw new AppError('O título é obrigatório.');
@@ -56,7 +56,8 @@ class MovieControllers{
     }
 
     async all(req, res) {
-        const {user_id, title, tags} = req.query;
+        const {title, tags} = req.query;
+        const user_id = req.user.id;
 
         let movie;
 
