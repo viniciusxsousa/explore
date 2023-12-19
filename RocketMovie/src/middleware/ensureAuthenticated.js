@@ -3,7 +3,7 @@ const AppError = require('../utils/AppError');
 const authConfig = require('../configs/auth');
 
 function ensureAuthenticated(req, res, next) {
-    const authHeader = res.headers.authorization;
+    const authHeader = req.headers.authorization;
 
     if(!authHeader) {
         throw new AppError('JWT token inválido', 401);
@@ -14,7 +14,7 @@ function ensureAuthenticated(req, res, next) {
     try {
         const {sub: user_id} = verify(token, authConfig.jwt.secret);
 
-        res.user = {
+        req.user = {
            id: Number(user_id)
         };
 
