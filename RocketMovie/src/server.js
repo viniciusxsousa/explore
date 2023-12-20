@@ -4,10 +4,12 @@ const database = require('./database/knex');
 const uploadConfig = require('./configs/upload');
 
 const express = require('express');
+const cors = require('cors');
 
 const AppError = require('./utils/AppError');
 
 const app = express();
+app.use(cors());
 const routes = require('./routes');
 
 database();
