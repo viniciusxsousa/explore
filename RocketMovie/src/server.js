@@ -1,6 +1,7 @@
 require('express-async-errors');
 
 const database = require('./database/knex');
+const uploadConfig = require('./configs/upload');
 
 const express = require('express');
 
@@ -12,6 +13,8 @@ const routes = require('./routes');
 database();
 
 app.use(express.json());
+
+app.use('/files', express.static(uploadConfig.UPLOADS_FOLDER));
 app.use(routes);
 
 app.use( (error, request, response, next) => {
