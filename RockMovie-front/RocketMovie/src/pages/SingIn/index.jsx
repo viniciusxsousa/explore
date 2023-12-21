@@ -1,3 +1,5 @@
+import { useAuth } from '../../hooks/auth';
+
 import { Container, Form, BackgroundImg } from './styles'
 
 import { Link } from 'react-router-dom'
@@ -10,6 +12,10 @@ import { ButtonTxt } from '../../components/ButtonTxt'
 
 
 export function SingIn() {
+
+    const context = useAuth();
+
+
     return(
         <Container>
             <Form>
