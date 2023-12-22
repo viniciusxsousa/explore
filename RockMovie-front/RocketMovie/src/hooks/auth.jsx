@@ -5,10 +5,9 @@ import { api } from '../services/api'
 const AuthContext = createContext({});
 
 function AuthProvider({children}) {
+    const [data, setData] = useState({});
 
     async function singIn({email, password}) {
-        const [data, setData] = useState({});
-
         try {
             const response = await api.post("/sessions", { email, password });
             const {token, user} = response.data;
