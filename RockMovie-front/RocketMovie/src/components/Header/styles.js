@@ -32,6 +32,7 @@ export const Container = styled.header`
         font-size: 14px;
         font-weight: 400;
         color: ${({theme}) => theme.COLORS.GRAY_200};
+        cursor: pointer;
 
         strong {
           color: ${({theme}) => theme.COLORS.WHITE_200};
