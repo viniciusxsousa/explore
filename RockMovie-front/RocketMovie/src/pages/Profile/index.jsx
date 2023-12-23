@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import { useAuth } from '../../hooks/auth';
 import { Container, Header, Form, Avatar } from "./styles";
 
 import { FiUser, FiMail, FiLock, FiCamera } from 'react-icons/fi'
@@ -7,6 +9,13 @@ import { Button } from '../../components/Button'
 import { ButtonTxt } from "../../components/ButtonTxt";
 
 export function Profile() {
+    const { user } = useAuth();
+
+    const [name, setName] = useState(user.name);
+    const [email, setEmail] = useState(user.email);
+    const [passwordOld, setPasswordOld] = useState('');
+    const [passwordNew, setPasswordNew] = useState('');
+
     return(
         <Container>
             <Header>
@@ -24,10 +33,33 @@ export function Profile() {
                     </label>
                 </Avatar>
 
-                <Input icon={FiUser} type='text' value='Vinicius Sousa'/>
-                <Input icon={FiMail} type='mail' value='viniciusxsousa@outlook.com'/>
-                <Input icon={FiLock} type='password' placeholder='Senha atual'/>
-                <Input icon={FiLock} type='password' placeholder='Nova senha'/>
+                <Input 
+                    icon={FiUser} 
+                    type='text' 
+                    value={name} 
+                    onChange={e => setName(e.target.value)}
+                />
+
+                <Input 
+                    icon={FiMail} 
+                    type='mail' 
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                />
+
+                <Input 
+                    icon={FiLock} 
+                    type='password' 
+                    placeholder='Senha atual'
+                    onChange={e => setPasswordOld(e.target.value)}
+                />
+
+                <Input 
+                    icon={FiLock} 
+                    type='password' 
+                    placeholder='Nova senha'
+                    onChange={e => setPasswordNew(e.target.value)}
+                />
 
                 <Button title='Salvar'/>
 
