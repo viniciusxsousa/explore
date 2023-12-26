@@ -9,12 +9,24 @@ import { Button } from '../../components/Button'
 import { ButtonTxt } from "../../components/ButtonTxt";
 
 export function Profile() {
-    const { user } = useAuth();
+    const { user, updateProfile } = useAuth();
 
     const [name, setName] = useState(user.name);
     const [email, setEmail] = useState(user.email);
     const [passwordOld, setPasswordOld] = useState('');
     const [passwordNew, setPasswordNew] = useState('');
+
+    function handleUpdateProfile() {
+        const user = {
+            name,
+            email,
+            old_password: passwordOld,
+            password: passwordNew
+        }
+
+        updateProfile(user);
+
+    }
 
     return(
         <Container>
@@ -61,7 +73,7 @@ export function Profile() {
                     onChange={e => setPasswordNew(e.target.value)}
                 />
 
-                <Button title='Salvar'/>
+                <Button type='button' title='Salvar' onClick={handleUpdateProfile}/>
 
             </Form>
         </Container>
