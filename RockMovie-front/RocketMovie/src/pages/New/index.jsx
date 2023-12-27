@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { Container, Content, Textarea } from "./styles";
 
 import { Header } from '../../components/Header'
@@ -7,6 +9,14 @@ import { Button } from '../../components/Button'
 import { TagItens } from "../../components/TagItens";
 
 export function New() {
+    const [markers, setMarkers] = useState([]);
+    const [newMarkers, setNewMarkers] = useState("");
+
+    function handleAddMarkers() {
+        setMarkers(prevState => [...prevState, newMarkers]);
+        setNewMarkers('');
+    }
+
     return(
         <Container>
             <Header/>
@@ -27,8 +37,21 @@ export function New() {
                     <h3>Marcadores</h3>
 
                     <div className="marcadores">
-                        <TagItens value='React'/>
-                        <TagItens placeholder='Novo Marcador' isNew/>
+                        {markers.map((marker, index) => (
+                            <TagItens 
+                                key={index}
+                                value={marker}
+                                onClick={() => {}}
+                            />
+                        ))}
+
+                        <TagItens 
+                            value={newMarkers}
+                            placeholder='Novo Marcador' 
+                            isNew
+                            onChange={e => setNewMarkers(e.target.value)}
+                            onClick={handleAddMarkers}
+                        />
                     </div>
 
                     <div className="buttons">
