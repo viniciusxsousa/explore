@@ -17,7 +17,12 @@ export const Container = styled.div`
         color: ${({theme}) => theme.COLORS.WHITE_300};
     }
 
-    > svg {
+    > button {
+        border: none;
+        background-color: transparent;
+    }
+
+    > button svg {
         width: 22px;
         height: 22px;
         color: ${({theme}) => theme.COLORS.PINK};
