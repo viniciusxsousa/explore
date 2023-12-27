@@ -17,6 +17,10 @@ export function New() {
         setNewMarkers('');
     }
 
+    function handleDeleteMarker(deleted) {
+        setMarkers(prevState => prevState.filter(marker => marker !== deleted));
+    }
+
     return(
         <Container>
             <Header/>
@@ -37,11 +41,12 @@ export function New() {
                     <h3>Marcadores</h3>
 
                     <div className="marcadores">
+
                         {markers.map((marker, index) => (
                             <TagItens 
                                 key={index}
                                 value={marker}
-                                onClick={() => {}}
+                                onClick={() => {handleDeleteMarker(marker)}}
                             />
                         ))}
 
