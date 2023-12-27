@@ -1,14 +1,18 @@
 import { Container } from './styles'
 
 import { FiSearch } from 'react-icons/fi'
+import avatarPlaceholder from '../../assets/avatar_placeholder.svg';
 
 import { Link } from 'react-router-dom'
 import { useAuth } from  '../../hooks/auth'
 
 import { Input } from '../Input'
+import { api } from '../../services/api';
 
 export function Header(){
-    const { logout } = useAuth();
+    const { logout, user } = useAuth();
+
+    const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
 
     return(
         <Container>
@@ -18,11 +22,11 @@ export function Header(){
 
             <div className='profile'>                
                 <span onClick={logout} >
-                    <strong>Vinicius Sousa</strong>
+                    <strong>{user.name}</strong>
                     sair
                 </span>
                     <Link to='/profile'>
-                        <img src="https://github.com/viniciusxsousa.png" alt="Foto do usuário" />
+                        <img src={avatarUrl} alt={user.name} />
                     </Link>
             </div>
         </Container>
