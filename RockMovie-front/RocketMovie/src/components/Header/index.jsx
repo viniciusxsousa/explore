@@ -9,7 +9,7 @@ import { useAuth } from  '../../hooks/auth'
 import { Input } from '../Input'
 import { api } from '../../services/api';
 
-export function Header(){
+export function Header({search}){
     const { logout, user } = useAuth();
 
     const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
@@ -18,7 +18,14 @@ export function Header(){
         <Container>
             <h1>RocketMovies</h1>
             
-            <Input icon={FiSearch} type='text' placeholder='Pesquise pelo título'/>
+            <Input 
+                icon={FiSearch} 
+                type='text' 
+                placeholder='Pesquise pelo título'
+                onChange={(e) => {
+                    search(e.target.value)
+                }}
+            />
 
             <div className='profile'>                
                 <span onClick={logout} >

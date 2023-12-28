@@ -4,23 +4,44 @@ import { FaStar, FaRegStar } from 'react-icons/fa'
 
 import { Tag } from '../Tag';
 
-export function Card(){
+export function Card({data}){
+    const star = data.rating;
+    let starCompleted = [];
+    let starNotCompleted = [];
+
+    for(let i = 0; i < star; i++) {
+        starCompleted.push(i);
+    }
+
+    for(let i = (5 - star); i > 0; i--) {
+        starNotCompleted.push(i);
+    }
+
     return(
         <Container to='/details/01'>
-            <h3>Interestellar</h3>
+            <h3>{data.title}</h3>
 
             <div>
-                <FaStar/>
-                <FaStar/>
-                <FaStar/>
-                <FaStar/>
-                <FaRegStar/>
+
+                {starCompleted.map((item) => (
+                    <FaStar key={item}/>
+                ))}
+
+                {starNotCompleted.map((item)=> (
+                    <FaRegStar key={item}/>
+                ))}
+                
             </div>
 
-            <p>Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se...</p>
+            <p>{data.description}</p>
 
-            <Tag title='Drama'/>
-            <Tag title='Drama'/>
+            {data.tags.map((tag) => (
+                <Tag 
+                    key={tag.id}
+                    title={tag.name}
+                />
+            ))}
+
         </Container>
     )
 }
