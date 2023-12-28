@@ -60,5 +60,6 @@ export const Content = styled.div`
         color: ${({theme}) => theme.COLORS.WHITE_200};
         margin-top: 40px;
         text-align: justify;
+        margin-bottom: 20px;
     }
 `

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import { api } from "../../services/api";
 
@@ -8,18 +8,28 @@ import { Container, Content } from "./styles";
 import { FaStar, FaRegStar, FaClock } from 'react-icons/fa'
 
 import { Header } from '../../components/Header'
+import { Button } from '../../components/Button'
 import { ButtonTxt } from '../../components/ButtonTxt'
 import { Tag } from '../../components/Tag'
 
 export function Details(){
     const [data, setData] = useState('');
-
+    
+    const navigate = useNavigate();
     const params = useParams();
+
+    async function handlerDelete() {
+        const confirmer = confirm('Realmente deseja excluir esse filme ?');
+
+        if(confirmer) {
+            await api.delete(`/movie/${params.id}`);
+            navigate('/');
+        }
+    }
 
     useEffect(() => {
         async function fetchMovie() {
             const response = await api.get(`/movie/${params.id}`);
-            console.log(response.data);
             setData(response.data);
         }
 
@@ -80,6 +90,8 @@ export function Details(){
                     }
 
                     <p>{data.description}</p> 
+
+                    <Button title='Excluir' onClick={handlerDelete}/>
 
                 </Content>
             </main>
