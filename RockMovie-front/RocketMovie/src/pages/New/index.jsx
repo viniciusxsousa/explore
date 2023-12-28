@@ -31,6 +31,22 @@ export function New() {
     }
 
     async function handleCreateMovie() {
+        if(!title) {
+            return alert('Título é obrigatório.');
+        }
+
+        if(!rating) {
+            return alert('A nota é obrigatório.');
+        }
+
+        if(!description) {
+            return alert('A descrição é obrigatória.');
+        }
+
+        if(newMarkers) {
+            return alert('Há um marcador no campo que não foi salvo.');
+        }
+
         await api.post('/movie', {
             title,
             description,
