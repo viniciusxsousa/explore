@@ -47,6 +47,7 @@ export function Home(){
                 <Card 
                   key={movie.id}
                   data={movie} 
+                  id={movie.id}
                 />
               ))}
           </main>

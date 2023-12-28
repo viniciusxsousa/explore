@@ -4,7 +4,7 @@ import { FaStar, FaRegStar } from 'react-icons/fa'
 
 import { Tag } from '../Tag';
 
-export function Card({data}){
+export function Card({data, id}){
     const star = data.rating;
     let starCompleted = [];
     let starNotCompleted = [];
@@ -18,7 +18,7 @@ export function Card({data}){
     }
 
     return(
-        <Container to='/details/01'>
+        <Container to={`/details/${id}`}>
             <h3>{data.title}</h3>
 
             <div>
