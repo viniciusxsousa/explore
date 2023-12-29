@@ -5,14 +5,21 @@ import avatarPlaceholder from '../../assets/avatar_placeholder.svg';
 
 import { Link } from 'react-router-dom'
 import { useAuth } from  '../../hooks/auth'
+import { useNavigate } from 'react-router-dom';
 
 import { Input } from '../Input'
 import { api } from '../../services/api';
 
 export function Header({search}){
     const { logout, user } = useAuth();
+    const navigate = useNavigate();
 
     const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
+
+    function handleLogout() {
+        navigate('/');
+        logout();
+    }
 
     return(
         <Container>
@@ -28,7 +35,7 @@ export function Header({search}){
             />
 
             <div className='profile'>                
-                <span onClick={logout} >
+                <span onClick={handleLogout} >
                     <strong>{user.name}</strong>
                     sair
                 </span>
